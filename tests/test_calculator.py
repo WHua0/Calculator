@@ -1,5 +1,5 @@
 '''Calculator Test'''
-from calculator import add, subtract, multiply, divide, input_number, input_operation
+from calculator import add, subtract, multiply, divide, check_number, check_operation
 
 def test_addition():
     '''Test that addition function works'''
@@ -17,11 +17,11 @@ def test_division():
     '''Test that division function works'''
     assert divide(2,2) == 1
 
-def test_input_number():
+def test_check_number():
     '''Test that input number function works'''
-    assert input_number
+    assert check_number(1.0) == 1.0
 
-def test_input_operation():
+def test_check_operation():
     '''Test that input operation function works'''
-    assert input_operation
+    assert check_operation("/") == "division"
     
