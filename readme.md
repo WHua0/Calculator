@@ -10,3 +10,6 @@
 1. pytest
 2. pytest --pylint
 3. pytest --pylint --cov
+
+## Run
+1.  __main__.py
