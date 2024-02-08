@@ -24,3 +24,4 @@ def test_input_number():
 def test_input_operation():
     '''Test that input operation function works'''
     assert input_operation
+    
