@@ -1,5 +1,5 @@
 '''Calculator Program'''
-from calculator import add, subtract, multiply, divide, input_number, input_operation
+from calculator import add, subtract, multiply, divide, check_number, check_operation
 
 def print_intro():
     '''Introduction'''
@@ -14,9 +14,14 @@ def main():
     print_intro()
 
     # Input Numbers and Math Operations
-    number1 = input_number()
-    operation = input_operation()
-    number2 = input_number()
+    number1 = input("Enter a Number: ")
+    number1 = check_number(number1)
+
+    operation = (input("Enter a Operation: ")).lower()
+    operation = check_operation(operation)
+
+    number2 = input("Enter a 2nd Number: ")
+    number2 = check_number(number2)
 
     # Calculate
     if operation == "addition":
