@@ -25,19 +25,19 @@ def main():
 
     # Calculate
     if operation == "addition":
-        print(add(number1,number2))
+        add(number1,number2)
 
     elif operation == "subtraction":
-        print(subtract(number1,number2))
+        subtract(number1,number2)
 
     elif operation == "multiplication":
-        print(multiply(number1,number2))
+        multiply(number1,number2)
 
     elif operation == "division":
         if number2 == 0:
             print("Cannot Divide By 0!")
         else:
-            print(divide(number1,number2))
+            divide(number1,number2)
 
     else:
         pass
