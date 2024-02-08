@@ -24,7 +24,7 @@ def check_number(num):
     except ValueError:
         try:
             float(num)
-            return float (num)
+            return float(num)
         except ValueError:
             print(num, "is not valid number!")
             return "error"
