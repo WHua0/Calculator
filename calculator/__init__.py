@@ -16,10 +16,9 @@ def divide(a,b):
     '''Divide a by b'''
     return a / b
 
-def input_number():
+def check_number(num):
     '''Checks if input is a number'''
     while True:
-        num = input("Enter a Number: ")
         try:
             int(num)
             return float(num)
@@ -29,11 +28,11 @@ def input_number():
                 return float (num)
             except ValueError:
                 print(num, "is not valid number!")
+                num = input("Enter a Number: ")
 
-def input_operation():
+def check_operation(op):
     '''Checks if input is a math operation'''
     while True:
-        op = input("Enter a Operation: ").lower()
         if op in ("addition", "add", "+"):
             return "addition"
         if op in ("subtraction", "subtract", "-"):
@@ -43,3 +42,4 @@ def input_operation():
         if op in ("division", "divide", "/"):
             return "division"
         print(op, "is not valid math operation!")
+        op = input("Enter a Operation: ").lower()
