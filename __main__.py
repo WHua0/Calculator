@@ -1,5 +1,5 @@
 '''Calculator Program'''
-from calculator import add, subtract, multiply, divide
+from calculator import add, subtract, multiply, divide, input_number, input_operation
 
 def print_intro():
     '''Introduction'''
@@ -14,21 +14,21 @@ def main():
     print_intro()
 
     # Input Numbers and Math Operations
-    number1 = float(input("Enter a Number: "))
-    operation = str(input("Enter an Operation:")).lower()
-    number2 = float(input("Enter a Second Number: "))
+    number1 = input_number()
+    operation = input_operation()
+    number2 = input_number()
 
     # Calculate
-    if operation in ("addition", "add", "+"):
+    if operation == "addition":
         print(add(number1,number2))
 
-    elif operation in ("subtraction", "subtract", "-"):
+    elif operation == "subtraction":
         print(subtract(number1,number2))
 
-    elif operation in ("multiplication", "multiply", "*"):
+    elif operation == "multiplication":
         print(multiply(number1,number2))
 
-    elif operation in ("division", "divide", "/"):
+    elif operation == "division":
         if number2 == 0:
             print("Cannot Divide By 0!")
         else:
