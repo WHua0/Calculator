@@ -12,4 +12,4 @@
 3. pytest --pylint --cov
 
 ## Run
-1.  $ python \__main__.py
+1.  $ python \___main___.py
