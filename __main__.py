@@ -18,16 +18,17 @@ def main():
     operation = str(input("Enter an Operation:")).lower()
     number2 = float(input("Enter a Second Number: "))
 
-    if operation == "addition":
+    # Calculate
+    if operation in ("addition", "add", "+"):
         print(add(number1,number2))
 
-    elif operation == "subtraction" :
+    elif operation in ("subtraction", "subtract", "-"):
         print(subtract(number1,number2))
 
-    elif operation == "multiplication":
+    elif operation in ("multiplication", "multiply", "*"):
         print(multiply(number1,number2))
 
-    elif operation == "division":
+    elif operation in ("division", "divide", "/"):
         print(divide(number1,number2))
 
     else:
