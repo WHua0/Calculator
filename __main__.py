@@ -26,7 +26,10 @@ def main():
         print(subtract(number1,number2))
 
     elif operation in ("multiplication", "multiply", "*"):
-        print(multiply(number1,number2))
+        if number2 == 0:
+            print("Cannot Divide By 0!")
+        else:
+            print(multiply(number1,number2))
 
     elif operation in ("division", "divide", "/"):
         print(divide(number1,number2))
