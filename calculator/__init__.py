@@ -19,15 +19,11 @@ def divide(a,b):
 def check_number(num):
     '''Checks if input is a number'''
     try:
-        int(num)
+        float(num)
         return float(num)
     except ValueError:
-        try:
-            float(num)
-            return float(num)
-        except ValueError:
-            print(num, "is not valid number!")
-            return "error"
+        print(num, "is not valid number!")
+        return "error"
 
 def check_operation(op):
     '''Checks if input is a math operation'''
