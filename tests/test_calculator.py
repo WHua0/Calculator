@@ -19,9 +19,14 @@ def test_division():
 
 def test_check_number():
     '''Test that input number function works'''
+    assert check_number(1) == 1.0
     assert check_number(1.0) == 1.0
+    assert check_number("a") == "error"
 
 def test_check_operation():
     '''Test that input operation function works'''
+    assert check_operation("+") == "addition"
+    assert check_operation("-") == "subtraction"
+    assert check_operation("*") == "multiplication"
     assert check_operation("/") == "division"
-    
+    assert check_operation("a") == "error"
