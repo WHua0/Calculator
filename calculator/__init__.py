@@ -1,21 +1,31 @@
 '''Calculator'''
 
-# from calculator.operations import add, subtract, multiply, divide
+from calculator.calculation import Calculation
+from calculator.operations import add, subtract, multiply, divide
 
-def add(a,b):
-    '''Add a and b'''
-    return a + b
+class Calculator:
+    '''Class Calculator'''
 
-def subtract(a,b):
-    '''Subtract a and b'''
-    return a - b
+    @staticmethod
+    def add(a,b):
+        '''Encapulates, then peforms Add Operation'''
+        calculation = Calculation(a, b, add)
+        return calculation.get_result()
 
-def multiply(a,b):
-    '''Multiple a and b'''
-    return a * b
+    @staticmethod
+    def subtract(a,b):
+        '''Encapulates, then peforms Subtract Operation'''
+        calculation = Calculation(a, b, subtract)
+        return calculation.get_result()
 
-def divide(a,b):
-    '''Divide a by b'''
-    if b == 0:
-        return "Cannot divide by zero!"
-    return a / b
+    @staticmethod
+    def multiply (a,b):
+        '''Encapulates, then peforms Multiply Operation'''
+        calculation = Calculation(a, b, multiply)
+        return calculation.get_result()
+
+    @staticmethod
+    def divide(a,b):
+        '''Encapulates, then peforms Divide Operation'''
+        calculation = Calculation(a, b, divide)
+        return calculation.get_result()
