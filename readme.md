@@ -10,6 +10,3 @@
 1. pytest
 2. pytest --pylint
 3. pytest --pylint --cov
-
-## Run
-1. python \_\_main__.py
