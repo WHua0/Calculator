@@ -14,6 +14,4 @@ def multiply(a,b):
 
 def divide(a,b):
     '''Divide a by b'''
-    if b == 0:
-        return "error"
     return a / b
