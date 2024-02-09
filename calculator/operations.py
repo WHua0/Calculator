@@ -1,4 +1,4 @@
-'''Definitions'''
+'''Function: Operations'''
 
 def add(a,b):
     '''Add a and b'''
