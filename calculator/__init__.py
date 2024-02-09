@@ -14,6 +14,8 @@ def multiply(a,b):
 
 def divide(a,b):
     '''Divide a by b'''
+    if b == 0:
+        return "error"
     return a / b
 
 def check_number(num):
@@ -27,13 +29,14 @@ def check_number(num):
 
 def check_operation(op):
     '''Checks if input is a math operation'''
+    op = str(op).lower()
     if op in ("addition", "add", "+"):
-        return "addition"
+        return "+"
     if op in ("subtraction", "subtract", "-"):
-        return "subtraction"
+        return "-"
     if op in ("multiplication", "multiply", "*"):
-        return "multiplication"
+        return "*"
     if op in ("division", "divide", "/"):
-        return "division"
-    print(op, "is not valid math operation!")
+        return "/"
+    print(op, "is not a valid math operation!")
     return "error"
