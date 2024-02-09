@@ -15,6 +15,7 @@ def test_multiplication():
 
 def test_division():
     '''Test that division function works'''
+    assert divide(2,0) == "error"
     assert divide(2,2) == 1
 
 def test_check_number():
@@ -25,8 +26,8 @@ def test_check_number():
 
 def test_check_operation():
     '''Test that input operation function works'''
-    assert check_operation("+") == "addition"
-    assert check_operation("-") == "subtraction"
-    assert check_operation("*") == "multiplication"
-    assert check_operation("/") == "division"
+    assert check_operation("+") == "+"
+    assert check_operation("-") == "-"
+    assert check_operation("*") == "*"
+    assert check_operation("/") == "/"
     assert check_operation("a") == "error"
