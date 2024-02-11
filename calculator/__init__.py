@@ -20,18 +20,24 @@ class Calculator:
     def subtract(a,b):
         '''Encapulates, then peforms Subtract Operation'''
         calculation = Calculation(a, b, subtract)
+        log = (a, b, add)
+        History.add_calculation(log)
         return calculation.compute()
 
     @staticmethod
     def multiply (a,b):
         '''Encapulates, then peforms Multiply Operation'''
         calculation = Calculation(a, b, multiply)
+        log = (a, b, add)
+        History.add_calculation(log)
         return calculation.compute()
 
     @staticmethod
     def divide(a,b):
         '''Encapulates, then peforms Divide Operation'''
         calculation = Calculation(a, b, divide)
+        log = (a, b, add)
+        History.add_calculation(log)
         return calculation.compute()
 
     @staticmethod
