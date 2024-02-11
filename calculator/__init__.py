@@ -52,5 +52,5 @@ class Calculator:
 
     @staticmethod
     def show_previous():
-        '''Shows History Logs'''
+        '''Shows Previous Log'''
         return History.show_previous()
