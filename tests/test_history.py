@@ -20,6 +20,6 @@ def test_history():
     History.clear_history()
     assert len(History.history) == 0
     # Test that show history function works if no history
-    assert History.show_history() == "No History"
-    # Test that show previous function works of no history
-    assert History.show_previous() == "No History"
+    assert History.show_history() == "No History!"
+    # Test that show previous function works if no history
+    assert History.show_previous() == "No History!"

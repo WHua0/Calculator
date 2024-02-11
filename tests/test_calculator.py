@@ -32,4 +32,4 @@ def test_history():
     assert Calculator.show_previous() == (2, 2, 'subtract')
     # test that clear history and show history functions work
     Calculator.clear_history()
-    assert Calculator.show_history() == "No History"
+    assert Calculator.show_history() == "No History!"

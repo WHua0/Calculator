@@ -15,5 +15,3 @@ class Calculation:
     def compute(self):
         '''Executes the operation and returns the result'''
         return self.operation(self.a, self.b)
-
-    # Optional - ''' Returns operand a, operand b, operation '''

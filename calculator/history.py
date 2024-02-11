@@ -15,7 +15,8 @@ class History:
         '''Retrieves the entire calculation history'''
         if cls.history:
             return cls.history
-        return "No History"
+        # If there no is history, returns No History!
+        return "No History!"
 
     @classmethod
     def clear_history(cls):
@@ -24,7 +25,8 @@ class History:
 
     @classmethod
     def show_previous(cls):
-        '''Retrieves the previous calculation, but returns None if there is none'''
+        '''Retrieves the previous calculation'''
         if cls.history:
             return cls.history[-1]
-        return "No History"
+        # If there no is history, returns No History!
+        return "No History!"
