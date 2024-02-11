@@ -5,6 +5,8 @@ from calculator.operations import add, subtract, multiply, divide
 class Calculator:
     '''Class Calculator'''
 
+    # Performs compute, adds to history, returns result
+
     @staticmethod
     def add(a,b):
         '''Encapulates, then peforms Add Operation'''
