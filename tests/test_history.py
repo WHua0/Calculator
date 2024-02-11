@@ -5,6 +5,7 @@ from calculator.operations import add, subtract
 def test_history():
     '''test that history class functions work'''
     # test that add calculation function works
+    History.clear_history()
     calc1 = (2, 2, add)
     calc2 = (2, 2, subtract)
     History.add_calculation(calc1)

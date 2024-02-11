@@ -1,6 +1,7 @@
 '''Calculator'''
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
+from calculator.history import History
 
 class Calculator:
     '''Class Calculator'''
@@ -9,8 +10,10 @@ class Calculator:
 
     @staticmethod
     def add(a,b):
-        '''Encapulates, then peforms Add Operation'''
+        '''Encapulates, peforms Add Operation, stores Log'''
         calculation = Calculation(a, b, add)
+        log = (a, b, add)
+        History.add_calculation(log)
         return calculation.compute()
 
     @staticmethod
@@ -30,3 +33,18 @@ class Calculator:
         '''Encapulates, then peforms Divide Operation'''
         calculation = Calculation(a, b, divide)
         return calculation.compute()
+
+    @staticmethod
+    def show_history():
+        '''Shows History Logs'''
+        return History.show_history()
+
+    @staticmethod
+    def clear_history():
+        '''Clears History Logs'''
+        return History.clear_history()
+
+    @staticmethod
+    def show_previous():
+        '''Shows History Logs'''
+        return History.show_previous()
