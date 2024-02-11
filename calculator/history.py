@@ -13,13 +13,20 @@ class History:
     @classmethod
     def show_history(cls):
         '''Retrieve the entire calculation history'''
-        return cls.history
+        if cls.history:
+            return cls.history
+        return "No History"
 
     @classmethod
     def clear_history(cls):
         '''Clear the calculation history'''
         return cls.history.clear()
 
-    # Optional - '''Retrieve the lastest calculation, but returns None if there is no history'''
+    @classmethod
+    def show_previous(cls):
+        '''Retrieve the previous calculation, but returns None if there is none'''
+        if cls.history:
+            return cls.history[-1]
+        return "No History"
 
     # Optional - '''Find and return a list of calculations by operation  name'''
