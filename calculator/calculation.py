@@ -14,7 +14,7 @@ class Calculation:
         # Stores the operation
         self.operation = operation
 
-    def get_result(self):
+    def compute(self):
         '''Executes the operation and returns the result'''
         return self.operation(self.a, self.b)
 
