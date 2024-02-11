@@ -35,4 +35,5 @@ def test_history():
     # test that clear history and show history functions work
     Calculator.clear_history()
     Calculator.add(2,2)
-    assert Calculator.show_history() == [(2, 2, 'add')]
+    Calculator.add(2,2)
+    assert Calculator.show_history() == [(2, 2, 'add'), (2, 2, 'add')]
