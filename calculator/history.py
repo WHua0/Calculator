@@ -1,7 +1,6 @@
+# pylint: disable=too-few-public-methods
 '''Manages Calculations History'''
-import dataclasses
 
-@dataclasses.dataclass
 class History:
     '''Class History'''
     history = []

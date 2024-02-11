@@ -1,7 +1,6 @@
+# pylint: disable=too-few-public-methods
 '''Encapsulates a Calculation'''
-import dataclasses
 
-@dataclasses.dataclass
 class Calculation:
     '''Class Calculation'''
 
