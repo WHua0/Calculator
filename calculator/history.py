@@ -29,4 +29,4 @@ class History:
             return cls.history[-1]
         return "No History"
 
-    # Optional - '''Find and return a list of calculations by operation  name'''
+    # Optional - '''Find and return a list of calculations by operation name'''
