@@ -18,4 +18,4 @@ class Calculation:
         '''Executes the operation and returns the result'''
         return self.operation(self.a, self.b)
 
-    # Need to add - ''' Returns operand a, operand b, operation)
+    # Optional Feature to be added - ''' Returns operand a, operand b, operation '''
