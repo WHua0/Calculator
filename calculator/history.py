@@ -10,9 +10,15 @@ class History:
         '''Add a new calculation to the history'''
         cls.history.append(calculation)
 
-    # '''Retrieve the entire calculation history'''
+    @classmethod
+    def show_history(cls):
+        '''Retrieve the entire calculation history'''
+        return cls.history
 
-    # Optional - '''Clear the calculation history'''
+    @classmethod
+    def clear_history(cls):
+        '''Clear the calculation history'''
+        return cls.history.clear()
 
     # Optional - '''Retrieve the lastest calculation, but returns None if there is no history'''
 
