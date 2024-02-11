@@ -6,4 +6,4 @@ def test_add_calculation():
     '''test that add calculation function works'''
     calc = (2, 2, add)
     History.add_calculation(calc)
-    assert len(history) == 1
+    assert len(History.history) == 1
