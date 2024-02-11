@@ -1,8 +1,7 @@
 '''Encapsulates a Calculation'''
-
 import dataclasses
-@dataclasses.dataclass
 
+@dataclasses.dataclass
 class Calculation:
     '''Class Calculation'''
 
