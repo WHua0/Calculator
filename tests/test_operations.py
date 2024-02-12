@@ -21,4 +21,4 @@ def test_division():
 
 def test_division_by_zero():
     '''Test that divide by zero exception'''
-    assert divide(2, 0) == "Cannot divide by zero!", 'Divide by Zero exception failed'
+    assert divide(2, 0) == 'Cannot divide by zero!', 'Divide by Zero exception failed'
