@@ -1,10 +1,11 @@
 # pylint: disable = unused-import
+# pylint: disable = redefined-outer-name
+# pylint: disable = unused-argument
 # pylint: disable = line-too-long
 
 '''Calculator Test'''
 import pytest
 from calculator import Calculator
-
 
 def test_addition():
     '''Test that add function works '''  
@@ -26,15 +27,17 @@ def test_division_by_zero():
     '''Test that divide by zero exception'''
     assert Calculator.divide(2, 0) == 'Cannot divide by zero!', 'Divide by Zero exception failed'
 
-def test_history():
-    '''Test that history class functions work'''
+@pytest.fixture
+def setup_history():
+    '''Clears history and adds sample calculations for tests'''
     Calculator.clear_history()
     Calculator.add(2, 2)
     Calculator.subtract(2, 2)
-    assert Calculator.show_history() == [(2, 2, 'add'), (2, 2, 'subtract')], 'Failed to add and/or retrieve history!'
-    # test that show_previous function works
+
+def test_history(setup_history):
+    '''Test that history class functions work'''
+    assert Calculator.show_history() == [(2, 2, 'add'), (2, 2, 'subtract')], 'Failed to retrieve history!'
     assert Calculator.show_previous() == (2, 2, 'subtract'), 'Failed to retrieve previous log'
-    # test that clear history and show history functions work
     Calculator.clear_history()
-    assert Calculator.show_previous() == 'No History!', 'Failed to clear and/or show no history for previous log!'
+    assert Calculator.show_previous() == 'No History!', 'Failed to clear history and/or show no previous log!'
     assert Calculator.show_history() == 'No History!', 'Failed to clear and/or show no history!'
