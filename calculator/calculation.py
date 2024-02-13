@@ -1,10 +1,11 @@
 # pylint: disable=too-few-public-methods
 '''Encapsulates a Calculation'''
+from decimal import Decimal
 
 class Calculation:
     '''Class Calculation'''
 
-    def __init__(self, a, b, operation):
+    def __init__(self, a: Decimal, b: Decimal, operation):
         '''Encapsulates a single calculation'''
         # Initiates operand a, operand b
         self.a = a

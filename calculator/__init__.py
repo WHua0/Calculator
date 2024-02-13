@@ -1,4 +1,5 @@
 '''Calculator'''
+from decimal import Decimal
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 from calculator.history import History
@@ -9,7 +10,7 @@ class Calculator:
     # Performs compute, creates log, adds log to history, returns result
 
     @staticmethod
-    def add(a, b):
+    def add(a: Decimal, b: Decimal):
         '''Encapulates, creates and stores log, performs Add operation'''
         calculation = Calculation(a, b, add)
         log = (a, b, 'add')
@@ -17,7 +18,7 @@ class Calculator:
         return calculation.compute()
 
     @staticmethod
-    def subtract(a, b):
+    def subtract(a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores log, performs Subtract operation'''
         calculation = Calculation(a, b, subtract)
         log = (a, b, 'subtract')
@@ -25,7 +26,7 @@ class Calculator:
         return calculation.compute()
 
     @staticmethod
-    def multiply (a, b):
+    def multiply (a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores logs, performs Multiply operation'''
         calculation = Calculation(a, b, multiply)
         log = (a, b, 'add')
@@ -33,7 +34,7 @@ class Calculator:
         return calculation.compute()
 
     @staticmethod
-    def divide(a, b):
+    def divide(a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores logs, performs Add Divide Operation'''
         calculation = Calculation(a, b, divide)
         log = (a, b, 'divide')
