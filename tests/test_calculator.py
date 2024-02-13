@@ -8,23 +8,23 @@ import pytest
 from calculator import Calculator
 
 def test_addition():
-    '''Test that add function works '''  
+    '''Tests that add function works '''  
     assert Calculator.add(2, 2) == 4, 'Add operation failed'
 
 def test_subtraction():
-    '''Test that subtract function works '''    
+    '''Tests that subtract function works '''    
     assert Calculator.subtract(2, 2) == 0, 'Subtract operation failed'
 
 def test_multiplication():
-    '''Test that multiple function works '''    
+    '''Tests that multiple function works '''    
     assert Calculator.multiply(2, 2) == 4, 'Multiply operation failed'
 
 def test_division():
-    '''Test that divide function works '''    
+    '''Tests that divide function works '''    
     assert Calculator.divide(2, 2) == 1, 'Divide operation, not by Zero, failed'
 
 def test_division_by_zero():
-    '''Test that divide by zero exception'''
+    '''Tests that divide by zero exception'''
     assert Calculator.divide(2, 0) == 'Cannot divide by zero!', 'Divide by Zero exception failed'
 
 @pytest.fixture
@@ -38,6 +38,7 @@ def test_history(setup_history):
     '''Test that history class functions work'''
     assert Calculator.show_history() == [(2, 2, 'add'), (2, 2, 'subtract')], 'Failed to retrieve history!'
     assert Calculator.show_previous() == (2, 2, 'subtract'), 'Failed to retrieve previous log'
+    # Tests that history class functions work with No History
     Calculator.clear_history()
     assert Calculator.show_previous() == 'No History!', 'Failed to clear history and/or show no previous log!'
     assert Calculator.show_history() == 'No History!', 'Failed to clear and/or show no history!'
