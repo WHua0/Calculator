@@ -26,7 +26,7 @@ def test_division():
 
 def test_division_by_zero():
     '''Tests that divide by zero exception'''
-    with pytest.raises(ValueError, match='Cannot divide by zero!'):
+    with pytest.raises(ValueError, match = 'Cannot divide by zero!'):
         Calculator.divide(2, 0), 'Divide by Zero exception failed'
 
 @pytest.fixture
