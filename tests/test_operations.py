@@ -1,4 +1,3 @@
-# pylint: disable = unused-import
 '''Operation Test'''
 import pytest
 from calculator.operations import add, subtract, multiply, divide
@@ -21,4 +20,5 @@ def test_division():
 
 def test_division_by_zero():
     '''Tests that divide by zero exception'''
-    assert divide(2, 0) == 'Cannot divide by zero!', 'Divide by Zero exception failed'
+    with pytest.raises(ValueError, match='Cannot divide by zero!') :
+        divide(2, 0), 'Divide by Zero exception failed'

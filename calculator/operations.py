@@ -17,6 +17,6 @@ def divide(a: Decimal, b: Decimal):
     '''Divides a by b'''
     if b == 0:
         # Handles Divide By Zero Exception
-        return 'Cannot divide by zero!'
+        raise ValueError('Cannot divide by zero!')
 
     return a / b
