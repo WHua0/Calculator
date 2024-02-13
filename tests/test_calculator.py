@@ -2,6 +2,7 @@
 # pylint: disable = redefined-outer-name
 # pylint: disable = unused-argument
 # pylint: disable = line-too-long
+# pylint: disable = expression-not-assigned
 
 '''Calculator Test'''
 import pytest
@@ -25,7 +26,8 @@ def test_division():
 
 def test_division_by_zero():
     '''Tests that divide by zero exception'''
-    assert Calculator.divide(2, 0) == 'Cannot divide by zero!', 'Divide by Zero exception failed'
+    with pytest.raises(ValueError, match='Cannot divide by zero!'):
+        Calculator.divide(2, 0), 'Divide by Zero exception failed'
 
 @pytest.fixture
 def setup_history():
