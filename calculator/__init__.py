@@ -13,7 +13,7 @@ class Calculator:
     def add(a: Decimal, b: Decimal):
         '''Encapulates, creates and stores log, performs Add operation'''
         calculation = Calculation(a, b, add)
-        log = (a, b, 'add')
+        log = History.create_log(a, b, add)
         History.add_calculation(log)
         return calculation.compute()
 
@@ -21,7 +21,7 @@ class Calculator:
     def subtract(a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores log, performs Subtract operation'''
         calculation = Calculation(a, b, subtract)
-        log = (a, b, 'subtract')
+        log = History.create_log(a, b, subtract)
         History.add_calculation(log)
         return calculation.compute()
 
@@ -29,7 +29,7 @@ class Calculator:
     def multiply (a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores logs, performs Multiply operation'''
         calculation = Calculation(a, b, multiply)
-        log = (a, b, 'add')
+        log = History.create_log(a, b, multiply)
         History.add_calculation(log)
         return calculation.compute()
 
@@ -37,7 +37,7 @@ class Calculator:
     def divide(a: Decimal, b: Decimal):
         ''''Encapulates, creates and stores logs, performs Add Divide Operation'''
         calculation = Calculation(a, b, divide)
-        log = (a, b, 'divide')
+        log = History.create_log(a, b, divide)
         History.add_calculation(log)
         return calculation.compute()
 
