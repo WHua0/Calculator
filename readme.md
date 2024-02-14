@@ -13,7 +13,7 @@
 
 ## Usage
 from calculator import Calculator
-from calculator.operations import Operation
+\nfrom calculator.operations import Operation
 
 1. Calculator.execute(a, b, Operation.add)
 2. Calculator.execute(a, b, Operation.subtract)
