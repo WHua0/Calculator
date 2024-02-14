@@ -17,6 +17,11 @@ def setup_history():
     History.add_calculation(calc1)
     History.add_calculation(calc2)
 
+def test_create_log():
+    '''Tests calculation conversion to numbers and string'''
+    log = History.create_log(2, 2, add)
+    assert log == (2, 2, 'add')
+
 def test_add_calculation(setup_history):
     '''Tests add calculations to history'''
     calc3 = (2, 2, multiply)

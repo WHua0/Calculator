@@ -1,9 +1,19 @@
 # pylint: disable=too-few-public-methods
 '''Manages Calculations History'''
+from decimal import Decimal
 
 class History:
     '''Class History'''
     history = []
+
+    @classmethod
+    def create_log(cls, a: Decimal, b: Decimal, operation):
+        '''Converts a new calculation to floats and string'''
+        cls.a = a
+        cls.b = b
+        # Converts Opperation Function to a String
+        cls.operation = operation.__name__
+        return (cls.a, cls.b, cls.operation)
 
     @classmethod
     def add_calculation(cls, calculation):
