@@ -12,7 +12,9 @@
 3. pytest --pylint --cov
 
 ## Usage
+
 from calculator import Calculator 
+
 from calculator.operations import Operation
 
 1. Calculator.execute(a, b, Operation.add)
