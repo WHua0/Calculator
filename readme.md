@@ -13,6 +13,8 @@
 
 ## Usage
 
+from calculator import Calculator
+
 1. Calculator.add(a, b)
 2. Calculator.subtract(a, b)
 3. Calculator.multiply(a, b)
