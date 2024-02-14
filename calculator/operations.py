@@ -1,22 +1,30 @@
-'''Function: Operations'''
+'''Class Operation'''
 from decimal import Decimal
 
-def add(a: Decimal, b: Decimal):
-    '''Adds a and b'''
-    return a + b
+class Operation:
+    '''Class Operation'''
 
-def subtract(a: Decimal, b: Decimal):
-    '''Subtracts a and b'''
-    return a - b
+    @staticmethod
+    def add(a: Decimal, b: Decimal):
+        '''Adds a and b'''
+        return a + b
 
-def multiply(a: Decimal, b: Decimal):
-    '''Multiplies a and b'''
-    return a * b
+    @staticmethod
+    def subtract(a: Decimal, b: Decimal):
+        '''Subtracts a and b'''
+        return a - b
 
-def divide(a: Decimal, b: Decimal):
-    '''Divides a by b'''
-    if b == 0:
-        # Handles Divide By Zero Exception
-        raise ValueError('Cannot divide by zero!')
+    @staticmethod
+    def multiply(a: Decimal, b: Decimal):
+        '''Multiplies a and b'''
+        return a * b
 
-    return a / b
+    @staticmethod
+    def divide(a: Decimal, b: Decimal):
+        '''Divides a by b'''
+        if b == 0:
+            # Handles Divide By Zero Exception
+            raise ValueError('Cannot divide by zero!')
+
+        return a / b
+    
