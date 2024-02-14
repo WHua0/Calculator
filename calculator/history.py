@@ -15,7 +15,7 @@ class History:
         '''Retrieves the entire calculation history'''
         if cls.history:
             return cls.history
-        # If there no is history, returns history]
+        # If there no is history, returns history
         return 'No History!'
 
     @classmethod
@@ -28,5 +28,5 @@ class History:
         '''Retrieves the previous calculation'''
         if cls.history:
             return cls.history[-1]
-        # If there no is history, returns history]
+        # If there no is history, returns history
         return 'No History!'
