@@ -47,5 +47,13 @@ def generate_test_data(number_of_records):
 
 def pytest_addoption(parser):
     '''Creates custom CLI option --num_records '''
-    # pytest --num_records # in CLI, Generates # of Test Records
-    parser.addoption('--num_records', action = 'store', default = 5, type = int, help = "Number of Test Records to Generate.")
+    # pytest --num_records #
+    parser.addoption('--num_records', action = 'store', default = 5, type = int, help = 'Number of Test Records to Generate.')
+
+def pytest_generate_tests(metafunc):
+    '''Checks if the test is expecting any of the dynamically generated fixtures'''
+    if {'a', 'b', 'expected'}.intersection(set(metafunc.fixturenames)):
+        num_records = metafunc.config.getoption('num_records')
+        parameters = list(generate_test_data(num_records))
+        modified_parameters = [(a, b, op_name if 'operation_name' in metafunc.fixturenames else op_func, expected) for a, b, op_name, op_func, expected in parameters]
+        metafunc.parametrize('a, b, operation, expected', modified_parameters)
