@@ -53,7 +53,11 @@ def pytest_addoption(parser):
 def pytest_generate_tests(metafunc):
     '''Checks if the test is expecting any of the dynamically generated fixtures'''
     if {'a', 'b', 'expected'}.intersection(set(metafunc.fixturenames)):
+        # Retrieves number of records for generating test data
         num_records = metafunc.config.getoption('num_records')
+        # Generates parameters from Faker
         parameters = list(generate_test_data(num_records))
+        # Modifies parameters to fit test functions
         modified_parameters = [(a, b, op_name if 'operation_name' in metafunc.fixturenames else op_func, expected) for a, b, op_name, op_func, expected in parameters]
+        # Parametrizes the test functions with the modified parameters
         metafunc.parametrize('a, b, operation, expected', modified_parameters)
