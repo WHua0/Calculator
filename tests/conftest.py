@@ -2,6 +2,7 @@
 # pylint: disable = line-too-long
 
 '''conftest.py'''
+# Configures Pytest
 from decimal import Decimal
 from faker import Faker
 from calculator.operations import Operation
