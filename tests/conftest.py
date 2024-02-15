@@ -14,6 +14,7 @@ operation_mapping = {
 }
 def generate_test_data(number_of_records):
     '''Generates test data in the amount called'''
+ 
     for _ in range(number_of_records):
         # Generates a 2-digit number for a and b
         a = Decimal(fake.random_number(digits = 2))
@@ -30,7 +31,7 @@ def generate_test_data(number_of_records):
 
         try:
             if operation_function == Operation.divide and b == Decimal('0'):
-                # Expect ZeroDivions Error if divide by 0
+                # Expect ZeroDivionError if divide by 0
                 expected = 'ZeroDivisionError'
             else:
                 # Expect normal results if divide not by 0
@@ -38,5 +39,5 @@ def generate_test_data(number_of_records):
         except ZeroDivisionError:
             expected = 'ZeroDivisionError'
 
-        # Generates a tuple yielded to the caller
+        # Generates a tuple yielded (manages memory better than return) to the caller
         yield a, b, operation_name, operation_function, expected
