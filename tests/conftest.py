@@ -38,5 +38,5 @@ def generate_test_data(number_of_records):
         except ZeroDivisionError:
             expected = 'ZeroDivisionError'
 
-        # Generates a tuple yieled to the caller
+        # Generates a tuple yielded to the caller
         yield a, b, operation_name, operation_function, expected
