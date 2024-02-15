@@ -1,4 +1,5 @@
 # pylint: disable = comparison-with-callable
+# pylint: disable = line-too-long
 
 '''conftest.py'''
 from decimal import Decimal
@@ -43,3 +44,7 @@ def generate_test_data(number_of_records):
 
         # Generates a tuple yielded (manages memory better than return) to the caller
         yield a, b, operation_name, operation_function, expected
+
+def pytest_addoption(parser):
+    '''Creates custom CLI option --num_records'''
+    parser.addoption('--num_records', action = 'store', default = 5, type = int, help = "Number of Test Records to Generate.")
