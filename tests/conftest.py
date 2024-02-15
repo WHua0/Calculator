@@ -46,5 +46,6 @@ def generate_test_data(number_of_records):
         yield a, b, operation_name, operation_function, expected
 
 def pytest_addoption(parser):
-    '''Creates custom CLI option --num_records'''
+    '''Creates custom CLI option --num_records '''
+    # pytest --num_records # in CLI, Generates # of Test Records
     parser.addoption('--num_records', action = 'store', default = 5, type = int, help = "Number of Test Records to Generate.")
