@@ -1,3 +1,5 @@
+# pylint: disable = comparison-with-callable
+
 '''conftest.py'''
 from decimal import Decimal
 from faker import Faker
@@ -14,7 +16,7 @@ operation_mapping = {
 }
 def generate_test_data(number_of_records):
     '''Generates test data in the amount called'''
- 
+
     for _ in range(number_of_records):
         # Generates a 2-digit number for a and b
         a = Decimal(fake.random_number(digits = 2))
