@@ -47,5 +47,5 @@ def test_history(setup_history):
     assert Calculator.show_history() == [(2, 2, 'add'), (2, 2, 'subtract')], 'Failed to retrieve history!'
     assert Calculator.show_previous() == (2, 2, 'subtract'), 'Failed to retrieve previous log'
     Calculator.clear_history()
-    assert Calculator.show_previous() == 'No History!', 'Failed to clear history and/or show no previous log!'
+    assert Calculator.show_previous() == 'No History!', 'Failed to clear history and/or show no previous history!'
     assert Calculator.show_history() == 'No History!', 'Failed to clear and/or show no history!'
