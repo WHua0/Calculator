@@ -1,8 +1,8 @@
 # pylint: disable = line-too-long
+# pylint: disable = broad-exception-caught
 
 '''Main Calculator Program'''
 
-import sys
 from decimal import Decimal, InvalidOperation
 from calculator import Calculator
 
@@ -21,11 +21,11 @@ def calculate_and_print(a, b, operation_name):
         # Tries to convert a and b into decimal objects
         a_decimal, b_decimal = map(Decimal, [a, b])
         # Retrieves operation function from the operation Name in operation Mappings
-        result = operation_mappings.get(operation_name)
+        operation_function = operation_mappings.get(operation_name)
 
         # If operation function is found => calculates and prints
-        if result:
-            print(f'The result of {a} {operation_name} {b} is equal to {result(a_decimal, b_decimal)}')
+        if operation_function:
+            print(f'The result of {a} {operation_name} {b} is equal to {operation_function(a_decimal, b_decimal)}')
 
         # If operation function is not found => unknown operation
         else:
