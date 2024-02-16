@@ -25,11 +25,11 @@ def calculate_and_print(a, b, operation_name):
 
         # If operation function is found => calculates and prints
         if operation_function:
-            print(f'The result of {a} {operation_name} {b} is equal to {operation_function(a_decimal, b_decimal)}')
+            print(f'The result of {a} {operation_name} {b} is equal to {operation_function(a_decimal, b_decimal)}.')
 
         # If operation function is not found => unknown operation
         else:
-            print(f'Unknown operation: {operation_name}')
+            print(f'Unknown operation: {operation_name}.')
 
     # If a and b cannot be converted to decimal objects => invalid number
     except InvalidOperation:
@@ -41,4 +41,4 @@ def calculate_and_print(a, b, operation_name):
 
     # Catch-All for Unexpected Errors
     except Exception as e:
-        print(f'An error occured: {e}')
+        print(f'An error occured: {e}.')
