@@ -24,17 +24,17 @@ class Calculator:
     @staticmethod
     def subtract(a: Decimal, b: Decimal):
         '''Executes subtract'''
-        return Calculator.execute(a, b, Operation.add)
+        return Calculator.execute(a, b, Operation.subtract)
 
     @staticmethod
     def multiply(a: Decimal, b: Decimal):
         '''Executes multiply'''
-        return Calculator.execute(a, b, Operation.add)
+        return Calculator.execute(a, b, Operation.multiply)
 
     @staticmethod
     def divide(a: Decimal, b: Decimal):
         '''Executes divide'''
-        return Calculator.execute(a, b, Operation.add)
+        return Calculator.execute(a, b, Operation.divide)
 
     @staticmethod
     def show_history():
