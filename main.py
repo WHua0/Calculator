@@ -41,4 +41,4 @@ def calculate_and_print(a, b, operation_name):
 
     # Catch-All for Unexpected Errors
     except Exception as e:
-        print(f'An error occured: {e}.')
+        print(f'An error occurred: {e}.')
