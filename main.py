@@ -20,7 +20,7 @@ def calculate_and_print(a, b, operation_name):
     try:
         # Tries to convert a and b into decimal objects
         a_decimal, b_decimal = map(Decimal, [a, b])
-        # Retrieves operation function from the operation Name in operation Mappings
+        # Retrieves operation function from the operation name in operation mappings
         operation_function = operation_mappings.get(operation_name)
 
         # If operation function is found => calculates and prints
