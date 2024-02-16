@@ -12,4 +12,11 @@
 3. pytest --pylint
 4. pytest --pylint --cov
 
-## Usage
+## CLI Usage
+a, b: numbers
+
+Operation: add, subtract, multiply, divide
+
+Input: $ python main.py <a> <b> <Operation>
+
+Output: The result of <a> <Operation> <b> is equal to <result>.
