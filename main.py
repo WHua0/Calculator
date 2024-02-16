@@ -49,7 +49,7 @@ def main():
 
     # If the number of Command Line Arguments is not 4 => print directions
     if len(sys.argv) != 4:
-        print("Usage: python calculator_main.py <number1> <number2> <operation>")
+        print('Usage: python calculator_main.py <number1> <number2> <operation>')
         sys.exit(1)
 
     # Else calculate and print
