@@ -3,6 +3,7 @@
 
 '''Main Calculator Program'''
 
+import sys
 from decimal import Decimal, InvalidOperation
 from calculator import Calculator
 
@@ -42,3 +43,18 @@ def calculate_and_print(a, b, operation_name):
     # Catch-All for Unexpected Errors
     except Exception as e:
         print(f'An error occurred: {e}.')
+
+def main():
+    '''Entry point for Python script'''
+
+    # If the number of Command Line Arguments is not 4 => print directions
+    if len(sys.argv) != 4:
+        print("Usage: python calculator_main.py <number1> <number2> <operation>")
+        sys.exit(1)
+
+    # Else calculate and print
+    _, a, b, operation = sys.argv
+    calculate_and_print(a, b, operation)
+
+if __name__ == '__main__':
+    main()
