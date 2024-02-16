@@ -5,6 +5,7 @@ import pytest
 from main import calculate_and_print
 
 @pytest.mark.parametrize('a_string, b_string, operation_string, expected_string', [
+    # Tests for Add, Subtract, Multiple, Divide
     ('5', '3', 'add', 'The result of 5 add 3 is equal to 8.'),
     ('10', '2', 'subtract', 'The result of 10 subtract 2 is equal to 8.'),
     ('4', '5', 'multiply',  'The result of 4 multiply 5 is equal to 20.'),
