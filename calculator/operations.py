@@ -24,7 +24,7 @@ class Operation:
         '''Divides a by b'''
         if b == 0:
             # Handles Divide By Zero Exception
-            raise ValueError('Cannot divide by zero')
+            raise ZeroDivisionError('Cannot divide by zero')
 
         return a / b
     

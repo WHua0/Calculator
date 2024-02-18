@@ -32,12 +32,12 @@ def test_divide():
 
 def test_division_by_zero():
     '''Tests that divide by zero exception'''
-    with pytest.raises(ValueError, match = 'Cannot divide by zero'):
+    with pytest.raises(ZeroDivisionError, match = 'Cannot divide by zero'):
         Calculator.execute(Decimal('2'), Decimal('0'), Operation.divide), 'Divide by Zero exception failed'
 
 def test_division_by_zero2():
     '''Tests that divide by zero exception'''
-    with pytest.raises(ValueError, match = 'Cannot divide by zero'):
+    with pytest.raises(ZeroDivisionError, match = 'Cannot divide by zero'):
         Calculator.divide(Decimal('2'), Decimal('0')), 'Divide by Zero exception failed'
 
 @pytest.fixture
