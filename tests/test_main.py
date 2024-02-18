@@ -14,7 +14,7 @@ from main import calculate_and_print, main
     ('4', '5', 'multiply',  'The result of 4 multiply 5 is equal to 20.'),
     ('20', '4', 'divide', 'The result of 20 divide 4 is equal to 5.'),
     # Test for divide by 0 exception
-    ('1', '0', 'divide', 'Error: Division by zero.'),
+    ('1', '0', 'divide', 'An error occurred: Cannot divide by zero.'),
     # Tests for unknown operation
     ('9', '3', 'unknown', 'Unknown operation: unknown.'),
     # Tests for invalid number input a
