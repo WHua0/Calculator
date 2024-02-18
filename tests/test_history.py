@@ -34,7 +34,7 @@ def test_show_history(setup_history):
     all_logs = History.show_history()
     assert len(all_logs) == 2,'Failed to retrieve history!'
 
-def test_show_history2(setup_history):
+def test_show_no_history(setup_history):
     '''Tests show no history'''
     History.clear_history()
     assert History.show_history() == 'No History!','Failed to show no history!'
@@ -51,7 +51,7 @@ def test_show_previous(setup_history):
     previous_log = History.show_previous()
     assert previous_log == (2, 2, Operation.divide), 'Failed to retrieve previous log!'
 
-def test_show_previous2(setup_history):
+def test_show_no_previous(setup_history):
     '''Tests show no history'''
     History.clear_history()
     assert History.show_previous() == 'No History!','Failed to show no previous log!'
