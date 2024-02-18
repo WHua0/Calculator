@@ -15,8 +15,10 @@
 ## CLI Usage
 a, b: numbers
 
+c: calculation result
+
 Operation: add, subtract, multiply, divide
 
-Input: $ python main.py <a> <b> <Operation>
+Input: $ python main.py a b Operation
 
-Output: The result of <a> <Operation> <b> is equal to <result>.
+Output: The result of a Operation b is equal to c.
