@@ -32,31 +32,38 @@ def test_calculate_and_print(a_string, b_string, operation_string, expected_stri
 
 def test_main(capsys):
     '''Tests main'''
-    # Save original sys.argv and replace it with our arguments
+    # Saves the original sys.argv and replace it with our arguments
     original_sys_argv = sys.argv
     sys.argv = ['calculator_main.py', '2', '3', 'add']
 
-    # Call main function
+    # Calls the main function
     main()
 
-    # Capture the printed output
+    # Captures the printed output
     captured = capsys.readouterr()
 
-    # Check if usage message is printed
+    # Checks if usage message is printed
     assert captured.out == 'The result of 2 add 3 is equal to 5.\n'
 
-    # Restore original sys.argv
+    # Restores original sys.argv
     sys.argv = original_sys_argv
 
 def test_main_2(capsys):
     '''Tests main if incorrect len(sys.argv)'''
+    # Saves the original sys.argv and replace it with our arguments
     original_sys_argv = sys.argv
     sys.argv = ['calculator_main.py', '2', '3', 'add', 'extra']
 
+    # Sets up a context where pytest will watch for SystemExit to be raised
     with pytest.raises(SystemExit) as e:
+        # Calls the main function
         main()
+    # Captures the printed output
     captured = capsys.readouterr()
+    # Checks if usage message is printed
     assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n'
+     # Checks if sys.exit(1) is called
     assert e.value.code == 1
 
+    # Restores original sys.argv
     sys.argv = original_sys_argv
