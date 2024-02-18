@@ -1,8 +1,11 @@
 # pylint: disable = line-too-long
+# pylint: disable = unused-import
 
 '''Main Test'''
+import sys
+from io import StringIO
 import pytest
-from main import calculate_and_print
+from main import calculate_and_print, main
 
 @pytest.mark.parametrize('a_string, b_string, operation_string, expected_string', [
     # Tests for Add, Subtract, Multiple, Divide
@@ -26,3 +29,34 @@ def test_calculate_and_print(a_string, b_string, operation_string, expected_stri
     captured = capsys.readouterr()
     # Asserts standard output == expected_string
     assert captured.out.strip() == expected_string
+
+def test_main(capsys):
+    '''Tests main'''
+    # Save original sys.argv and replace it with our arguments
+    original_sys_argv = sys.argv
+    sys.argv = ['calculator_main.py', '2', '3', 'add']
+
+    # Call main function
+    main()
+
+    # Capture the printed output
+    captured = capsys.readouterr()
+
+    # Check if usage message is printed
+    assert captured.out == 'The result of 2 add 3 is equal to 5.\n'
+
+    # Restore original sys.argv
+    sys.argv = original_sys_argv
+
+def test_main_2(capsys):
+    '''Tests main if incorrect len(sys.argv)'''
+    original_sys_argv = sys.argv
+    sys.argv = ['calculator_main.py', '2', '3', 'add', 'extra']
+
+    with pytest.raises(SystemExit) as e:
+        main()
+    captured = capsys.readouterr()
+    assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n'
+    assert e.value.code == 1
+
+    sys.argv = original_sys_argv
