@@ -16,3 +16,23 @@ def test_division_by_zero():
     calc = Calculation(Decimal('2'), Decimal('0'), Operation.divide)
     with pytest.raises(ValueError, match = 'Cannot divide by zero'):
         calc.compute(), 'Divide by Zero exception failed'
+
+def test_addition():
+    '''Tests addition function'''
+    calc = Calculation(Decimal('2'), Decimal('2'), Operation.add)
+    assert calc.compute() == 4, 'Failed to compute add function!'
+
+def test_subtract():
+    '''Tests subtract function'''
+    calc = Calculation(Decimal('2'), Decimal('2'), Operation.subtract)
+    assert calc.compute() == 0, 'Failed to compute subtract function!'
+
+def test_multiply():
+    '''Tests multiply function'''
+    calc = Calculation(Decimal('2'), Decimal('2'), Operation.multiply)
+    assert calc.compute() == 4, 'Failed to compute multiply function!'
+
+def test_divide():
+    '''Tests divide function'''
+    calc = Calculation(Decimal('2'), Decimal('2'), Operation.divide)
+    assert calc.compute() == 1, 'Failed to compute divide function!'
