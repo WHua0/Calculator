@@ -19,3 +19,19 @@ def test_divide_by_zero():
     with pytest.raises(ValueError, match = 'Cannot divide by zero'):
         calculation = Calculation(Decimal('10'), Decimal('0'), Operation.divide)
         calculation.compute(), 'Divide by Zero exception failed'
+
+def test_addition():
+    '''Tests addition function'''
+    assert Operation.add(2, 2) == 4
+
+def test_subtract():
+    '''Tests subtract function'''
+    assert Operation.subtract(2, 2) == 0
+
+def test_multiply():
+    '''Tests multiply function'''
+    assert Operation.multiply(2, 2) == 4
+
+def test_divide():
+    '''Tests divide function'''
+    assert Operation.divide(2, 2) == 1
