@@ -36,7 +36,7 @@ def calculate_and_print(a, b, operation_name):
     except InvalidOperation:
         print(f'Invalid number input: {a} or {b} is not a valid number.')
 
-    # If result is ZeroDvisionError from b = 0 => Error: Division by zero.
+    # If result is ZeroDivisionError from b = 0 => Error: Division by zero.
     except ZeroDivisionError:
         print('Error: Division by zero.')
 
