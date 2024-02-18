@@ -22,16 +22,16 @@ def test_divide_by_zero():
 
 def test_addition():
     '''Tests addition function'''
-    assert Operation.add(2, 2) == 4
+    assert Operation.add(2, 2) == 4, 'Add function failed!'
 
 def test_subtract():
     '''Tests subtract function'''
-    assert Operation.subtract(2, 2) == 0
+    assert Operation.subtract(2, 2) == 0, 'Subtract function failed!'
 
 def test_multiply():
     '''Tests multiply function'''
-    assert Operation.multiply(2, 2) == 4
+    assert Operation.multiply(2, 2) == 4, 'Multiply function failed!'
 
 def test_divide():
     '''Tests divide function'''
-    assert Operation.divide(2, 2) == 1
+    assert Operation.divide(2, 2) == 1, 'Divide function failed!'
