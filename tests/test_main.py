@@ -30,8 +30,8 @@ def test_calculate_and_print(a_string, b_string, operation_string, expected_stri
     # Asserts standard output == expected_string
     assert captured.out.strip() == expected_string, 'Calculate and Print function failed'
 
-def test_main(capsys):
-    '''Tests main'''
+def test_cli_command(capsys):
+    '''Tests CLI Command function'''
     # Saves the original sys.argv and replace it with our arguments
     original_sys_argv = sys.argv
     sys.argv = ['calculator_main.py', '2', '3', 'add']
@@ -43,13 +43,13 @@ def test_main(capsys):
     captured = capsys.readouterr()
 
     # Checks if usage message is printed
-    assert captured.out == 'The result of 2 add 3 is equal to 5.\n', 'CLI Script Failed'
+    assert captured.out == 'The result of 2 add 3 is equal to 5.\n', 'CLI Command Function Failed'
 
     # Restores original sys.argv
     sys.argv = original_sys_argv
 
-def test_main_2(capsys):
-    '''Tests main if incorrect len(sys.argv)'''
+def test_cli_command_2(capsys):
+    '''Tests CLI Command function if incorrect len(sys.argv)'''
     # Saves the original sys.argv and replace it with our arguments
     original_sys_argv = sys.argv
     sys.argv = ['calculator_main.py', '2', '3', 'add', 'extra']
@@ -61,7 +61,7 @@ def test_main_2(capsys):
     # Captures the printed output
     captured = capsys.readouterr()
     # Checks if usage message is printed
-    assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n', 'CLI Script with Extra Failed'
+    assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n', 'CLI Command function with Extra Failed'
      # Checks if sys.exit(1) is called
     assert e.value.code == 1
 
