@@ -43,7 +43,7 @@ def test_main(capsys):
     captured = capsys.readouterr()
 
     # Checks if usage message is printed
-    assert captured.out == 'The result of 2 add 3 is equal to 5.\n', 'CLI Failed'
+    assert captured.out == 'The result of 2 add 3 is equal to 5.\n', 'CLI Script Failed'
 
     # Restores original sys.argv
     sys.argv = original_sys_argv
@@ -61,7 +61,7 @@ def test_main_2(capsys):
     # Captures the printed output
     captured = capsys.readouterr()
     # Checks if usage message is printed
-    assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n', 'CLI with Extra Failed'
+    assert captured.out == 'Usage: python calculator_main.py <number1> <number2> <operation>\n', 'CLI Script with Extra Failed'
      # Checks if sys.exit(1) is called
     assert e.value.code == 1
 
