@@ -5,7 +5,7 @@
 import sys
 from io import StringIO
 import pytest
-from main import calculate_and_print, main
+from main import calculate_and_print, cli_command
 
 @pytest.mark.parametrize('a_string, b_string, operation_string, expected_string', [
     # Tests for Add, Subtract, Multiple, Divide
@@ -36,8 +36,8 @@ def test_main(capsys):
     original_sys_argv = sys.argv
     sys.argv = ['calculator_main.py', '2', '3', 'add']
 
-    # Calls the main function
-    main()
+    # Calls the CLI Command function
+    cli_command()
 
     # Captures the printed output
     captured = capsys.readouterr()
@@ -56,8 +56,8 @@ def test_main_2(capsys):
 
     # Sets up a context where pytest will watch for SystemExit to be raised
     with pytest.raises(SystemExit) as e:
-        # Calls the main function
-        main()
+        # Calls the CLI Command function
+        cli_command()
     # Captures the printed output
     captured = capsys.readouterr()
     # Checks if usage message is printed
