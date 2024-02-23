@@ -1,7 +1,7 @@
 # pylint: disable = line-too-long
 # pylint: disable = broad-exception-caught
 
-'''Main Calculator Program'''
+'''Calculator Script'''
 
 import sys
 from decimal import Decimal, InvalidOperation
@@ -41,7 +41,7 @@ def calculate_and_print(a, b, operation_name):
         print(f'An error occurred: {e}.')
 
 def cli_command():
-    '''Entry point for Python script'''
+    '''Entry point for Python Script'''
 
     # If the number of Command Line Arguments is not 4 => print directions
     if len(sys.argv) != 4:
@@ -53,7 +53,7 @@ def cli_command():
     calculate_and_print(a, b, operation)
 
 def main():
-    '''Main function'''
+    '''Script Main Function'''
     cli_command()
 
 # Code will only be activated when the script is directly run, not when imported
