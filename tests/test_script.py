@@ -1,11 +1,11 @@
 # pylint: disable = line-too-long
 # pylint: disable = unused-import
 
-'''Main Test'''
+'''Script Test'''
 import sys
 from io import StringIO
 import pytest
-from main import calculate_and_print, cli_command
+from script import calculate_and_print, cli_command
 
 @pytest.mark.parametrize('a_string, b_string, operation_string, expected_string', [
     # Tests for Add, Subtract, Multiple, Divide

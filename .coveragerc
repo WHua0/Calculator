@@ -2,4 +2,4 @@
 source = .
 omit = 
     conftest.py
-    *main*
+    script.py
