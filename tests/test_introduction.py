@@ -10,4 +10,4 @@ def test_introduction(capsys):
     introduction()
     captured = capsys.readouterr()
     result = 'Calculator App Initiated.\n\nPlease type a command.\nType "menu" for details.\nType "exit" to exit.\n\n'
-    assert captured.out == result, 'introduction function failed!'
+    assert captured.out == result, 'Introduction Function failed!'

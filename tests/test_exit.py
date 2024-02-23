@@ -22,4 +22,4 @@ def test_execute(exit_command, monkeypatch):
 
     exit_command.execute()
 
-    assert exit_msg == 'Exiting Calculator App ...'
+    assert exit_msg == 'Exiting Calculator App ...', 'Exit Function failed!'
