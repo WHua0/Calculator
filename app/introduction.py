@@ -2,7 +2,6 @@
 
 def introduction():
     '''Prints an Introduction'''
-    print()
     print('Calculator App Initiated.')
     print()
     print('Please type a command.')
