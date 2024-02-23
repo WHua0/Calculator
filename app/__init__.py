@@ -22,5 +22,5 @@ class App:
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
-            # Tries to Execute the Command, then Loops
+            # Tries to Execute the Input Command Name, then Loops
             self.command_handler.execute_command(input(">>> ").strip())
