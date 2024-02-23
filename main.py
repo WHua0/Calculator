@@ -1,1 +1,1 @@
-'''Calculator Main Program'''
+'''Calculator Main Application'''
