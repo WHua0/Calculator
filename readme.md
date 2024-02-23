@@ -22,3 +22,6 @@ Operation: add, subtract, multiply, divide
 Input: $ python script.py a b Operation
 
 Output: The result of a Operation b is equal to c.
+
+## CLI App Usage
+App Initation: $ python main.py
