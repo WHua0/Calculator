@@ -1,21 +1,26 @@
+# pylint: disable=too-few-public-methods
+
 '''Application'''
+from app.introduction import introduction
+from app.commands import CommandHandler
+from app.exit import ExitCommand
 
 class App:
     '''Class App'''
 
-    @staticmethod
-    def start() -> None:
-        '''App Start'''
-        print('Calculator App Initiated.')
-        print('Type "exit" to exit.')
-        print('Would you like to add, subtract, multiply or divide?')
+    def __init__(self):
+        '''Constructor'''
+        self.command_handler = CommandHandler()
+
+    def start(self):
+        '''Starts the App'''
+        # Prints Introduction
+        introduction()
+
+        # Valid Commands
+        self.command_handler.register_command('exit', ExitCommand())
 
         while True:
-            user_input = input('>>> ')
-            if user_input.lower() == 'exit':
-                print('Exiting Calculator App ...')
-                break
-
-            # Exit Command Reminder
-            print('Unknown command.')
-            print('Type "exit" to exit, or type a math operation to continue.')
+            # REPL: Read, Evaluate, Print, Loop
+            # Tries to Execute the Command, then Loops
+            self.command_handler.execute_command(input(">>> ").strip())
