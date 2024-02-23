@@ -12,7 +12,7 @@
 3. pytest --pylint
 4. pytest --pylint --cov
 
-## CLI Usage
+## CLI Script Usage
 a, b: numbers
 
 c: calculation result
