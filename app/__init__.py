@@ -8,6 +8,7 @@ class App:
         '''App Start'''
         print('Calculator App Initiated.')
         print('Type "exit" to exit.')
+        print('Would you like to add, subtract, multiply or divide?')
 
         while True:
             user_input = input('>>> ')
@@ -16,4 +17,5 @@ class App:
                 break
 
             # Exit Command Reminder
-            print('Unknown command. Type "exit" to exit.')
+            print('Unknown command.')
+            print('Type "exit" to exit, or type a math operation to continue.')
