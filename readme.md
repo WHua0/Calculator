@@ -15,9 +15,9 @@
 ## CLI Script Usage
 a, b: numbers
 
-c: calculation result
-
 Operation: add, subtract, multiply, divide
+
+c: calculation result
 
 Input: $ python script.py a b Operation
 
