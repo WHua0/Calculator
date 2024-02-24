@@ -17,7 +17,7 @@ class MultiplyCommand(Command):
             a_decimal, b_decimal = map(Decimal, [a, b])
             # If successful, multiplies a and b, and prints result
             result = Calculator.multiply(a_decimal, b_decimal)
-            print(f'The result of {a} times {b} is equal to {result}.')
+            print(f'The result of {a} multiply {b} is equal to {result}.')
 
         except InvalidOperation:
             # If cannot, print invalid numbers
