@@ -2,7 +2,7 @@
 
 '''Application'''
 from app.introduction import introduction
-from app.commandmanager import CommandHandler
+from app.commandmanager import CommandManager
 from app.commands.exitcommand import ExitCommand
 from app.commands.menucommand import MenuCommand
 from app.commands.addcommand import AddCommand
@@ -15,7 +15,7 @@ class App:
 
     def __init__(self):
         '''Constructor'''
-        self.command_handler = CommandHandler()
+        self.command_manager = CommandManager()
 
     def register_default_commands(self):
         '''Registers default commands'''
@@ -30,8 +30,9 @@ class App:
             'divide': DivideCommand()
         }
 
+        # Registers each Command in the dictionary with the Command Handler
         for command_name, command_instance in commands_dictionary.items():
-            self.command_handler.register_command(command_name, command_instance)
+            self.command_manager.register_command(command_name, command_instance)
 
     def start(self):
         '''Starts the App'''
@@ -44,4 +45,4 @@ class App:
         while True:
             # REPL: Read, Evaluate, Print, Loop
             # Tries to Execute the Input Command Name, then Loops
-            self.command_handler.execute_command(input('>>> ').strip())
+            self.command_manager.execute_command(input('>>> ').strip())

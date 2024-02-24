@@ -11,7 +11,7 @@ class Command(ABC):
         '''Any subclass of Command must implement its own execute method'''
         # Passthrough
 
-class CommandHandler:
+class CommandManager:
     '''Class CommandHandler'''
 
     def __init__(self):
