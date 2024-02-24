@@ -4,6 +4,7 @@
 from app.introduction import introduction
 from app.commandmanager import CommandHandler
 from app.commands.exitcommand import ExitCommand
+from app.commands.menucommand import MenuCommand
 from app.commands.addcommand import AddCommand
 from app.commands.subtractcommand import SubtractCommand
 from app.commands.multiplycommand import MultiplyCommand
@@ -22,6 +23,7 @@ class App:
         introduction()
 
         # Valid Commands
+        self.command_handler.register_command('menu', MenuCommand())
         self.command_handler.register_command('exit', ExitCommand())
         self.command_handler.register_command('add', AddCommand())
         self.command_handler.register_command('subtract', SubtractCommand())
