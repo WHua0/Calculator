@@ -30,7 +30,7 @@ class App:
     def register_default_commands(self, commands_dictionary):
         '''Registers default commands'''
 
-        # Registers each Command in the dictionary with the Command Handler
+        # Registers each Command in the dictionary with the Command Manager
         for command_name, command_instance in commands_dictionary.items():
             self.command_manager.register_command(command_name, command_instance)
 

@@ -12,7 +12,7 @@ class Command(ABC):
         # Passthrough
 
 class CommandManager:
-    '''Class CommandHandler'''
+    '''Class CommandManager'''
 
     def __init__(self):
         '''Constructor for a dictionary'''
