@@ -5,6 +5,8 @@ from app.introduction import introduction
 from app.commandmanager import CommandHandler
 from app.exitcommand import ExitCommand
 from app.addcommand import AddCommand
+from app.subtractcommand import SubtractCommand
+from app.multiplycommand import MultiplyCommand
 
 class App:
     '''Class App'''
@@ -21,6 +23,8 @@ class App:
         # Valid Commands
         self.command_handler.register_command('exit', ExitCommand())
         self.command_handler.register_command('add', AddCommand())
+        self.command_handler.register_command('subtract', SubtractCommand())
+        self.command_handler.register_command('multiply', MultiplyCommand())
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
