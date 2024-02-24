@@ -29,4 +29,4 @@ class CommandHandler:
 
         # If Fails to Execute => KeyError: Invalid Command
         except KeyError:
-            print(f"Invalid Command: {command_name}")
+            print(f'Invalid Command: {command_name}')

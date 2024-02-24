@@ -18,7 +18,7 @@ def test_execute(exit_command, monkeypatch):
         nonlocal exit_msg
         exit_msg = msg
 
-    monkeypatch.setattr(sys, "exit", mock_exit)
+    monkeypatch.setattr(sys, 'exit', mock_exit)
 
     exit_command.execute()
 
