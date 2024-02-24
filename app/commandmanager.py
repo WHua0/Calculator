@@ -8,14 +8,14 @@ class Command(ABC):
 
     @abstractmethod
     def execute(self):
-        '''Any Subclass of Command must implement its own execute method'''
+        '''Any subclass of Command must implement its own execute method'''
         # Passthrough
 
 class CommandHandler:
     '''Class CommandHandler'''
 
     def __init__(self):
-        '''Constructor for a Dictionary'''
+        '''Constructor for a dictionary'''
         self.commands = {}
 
     def register_command(self, command_name: str, command: Command):
@@ -23,10 +23,10 @@ class CommandHandler:
         self.commands[command_name] = command
 
     def execute_command(self, command_name: str):
-        '''Tries to Execute the Command'''
+        '''Tries to execute the Command'''
         try:
             self.commands[command_name].execute()
 
-        # If Fails to Execute => KeyError: Invalid Command
+        # If fails to execute => KeyError: Invalid Command
         except KeyError:
             print(f'Invalid Command: {command_name}')
