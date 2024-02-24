@@ -28,7 +28,9 @@ class TestAddCommand(unittest.TestCase):
 
     # Mock user input with invalid values
     @patch('builtins.input', side_effect=['abc', 'def'])
-    @patch('builtins.print')  # Mock print function
+     # Mock print function
+    @patch('builtins.print')
+
     def test_execute_invalid_input(self, mock_print, mock_input):
         '''Tests Exception Handling'''
 
