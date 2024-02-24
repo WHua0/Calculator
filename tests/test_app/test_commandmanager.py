@@ -35,7 +35,12 @@ class TestCommandManager(unittest.TestCase):
         self.manager.execute_command(command_name)
         command.execute.assert_called_once()
 
-    # To Add test_invalid_command
+    def test_execute_invalid_command(self):
+        '''Tests Execute_Invalid_Command'''
+
+        with unittest.mock.patch('builtins.print') as mocked_print:
+            self.manager.execute_command('invalid_command')
+            mocked_print.assert_called_with('Type "exit" to exit.')
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main() # pragma: no cover
