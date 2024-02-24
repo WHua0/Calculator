@@ -34,7 +34,7 @@ class TestMultiplyCommand(unittest.TestCase):
     def test_execute_invalid_input(self, mock_print, mock_input):
         '''Tests Exception Handling'''
 
-        # Creates an instance of AddCommand
+        # Creates an instance of MultiplyCommand
         multiply_command = MultiplyCommand()
 
         # Executes the command

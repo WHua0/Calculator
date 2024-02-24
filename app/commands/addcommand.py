@@ -17,7 +17,7 @@ class AddCommand(Command):
             a_decimal, b_decimal = map(Decimal, [a, b])
             # If successful, adds a and b, and prints result
             result = Calculator.add(a_decimal, b_decimal)
-            print(f'The result of {a} plus {b} is equal to {result}.')
+            print(f'The result of {a} add {b} is equal to {result}.')
 
         except InvalidOperation:
             # If cannot, print invalid numbers

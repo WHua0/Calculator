@@ -23,7 +23,7 @@ class TestAddCommand(unittest.TestCase):
         add_command.execute()
 
         # Asserts output
-        expected_output = 'The result of 2 plus 2 is equal to 4.'
+        expected_output = 'The result of 2 add 2 is equal to 4.'
         mock_print.assert_called_once_with(expected_output)
 
     # Mock user input with invalid values

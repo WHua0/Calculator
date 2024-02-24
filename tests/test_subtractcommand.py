@@ -23,7 +23,7 @@ class TestSubtractCommand(unittest.TestCase):
         subtract_command.execute()
 
         # Asserts output
-        expected_output = 'The result of 2 minus 2 is equal to 0.'
+        expected_output = 'The result of 2 subtract 2 is equal to 0.'
         mock_print.assert_called_once_with(expected_output)
 
     # Mock user input with invalid values

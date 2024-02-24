@@ -17,7 +17,7 @@ class SubtractCommand(Command):
             a_decimal, b_decimal = map(Decimal, [a, b])
             # If successful, subtracts a and b, and prints result
             result = Calculator.subtract(a_decimal, b_decimal)
-            print(f'The result of {a} minus {b} is equal to {result}.')
+            print(f'The result of {a} subtract {b} is equal to {result}.')
 
         except InvalidOperation:
             # If cannot, print invalid numbers
