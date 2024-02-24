@@ -7,4 +7,4 @@ class MenuCommand(Command):
     '''Class MenuCommand'''
     def execute(self):
         # Prints Command List"
-        print('Menu')
+        print('Commands: add, subtract, multiply, divide.')
