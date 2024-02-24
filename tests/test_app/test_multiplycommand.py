@@ -3,7 +3,7 @@
 '''MultiplyCommand Test'''
 import unittest
 from unittest.mock import patch
-from app.commands.multiplycommand import MultiplyCommand
+from app.plugins.multiply import MultiplyCommand
 
 class TestMultiplyCommand(unittest.TestCase):
     '''Tests MultiplyCommand'''

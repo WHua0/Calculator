@@ -3,7 +3,7 @@
 '''SubtractCommand Test'''
 import unittest
 from unittest.mock import patch
-from app.commands.subtractcommand import SubtractCommand
+from app.plugins.subtract import SubtractCommand
 
 class TestSubtractCommand(unittest.TestCase):
     '''Tests SubtractCommand'''

@@ -3,7 +3,7 @@
 '''DivideCommand Test'''
 import unittest
 from unittest.mock import patch
-from app.commands.dividecommand import DivideCommand
+from app.plugins.divide import DivideCommand
 
 class TestDivideCommand(unittest.TestCase):
     '''Tests DivideCommand'''

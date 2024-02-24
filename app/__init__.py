@@ -1,48 +1,39 @@
-# pylint: disable=too-few-public-methods
-
-'''Application'''
+'''App'''
+import pkgutil
+import importlib
 from app.introduction import introduction
-from app.commandmanager import CommandManager
-from app.commands.exitcommand import ExitCommand
-from app.commands.menucommand import MenuCommand
-from app.commands.addcommand import AddCommand
-from app.commands.subtractcommand import SubtractCommand
-from app.commands.multiplycommand import MultiplyCommand
-from app.commands.dividecommand import DivideCommand
+from app.commandmanager import Command, CommandManager
 
 class App:
     '''Class App'''
 
-    # Dictionary of Commands
-    commands_dictionary = {
-        'menu': MenuCommand(),
-        'exit': ExitCommand(),
-        'add': AddCommand(),
-        'subtract': SubtractCommand(),
-        'multiply': MultiplyCommand(),
-        'divide': DivideCommand()
-    }
-
     def __init__(self):
         '''Constructor'''
-        self.command_manager = CommandManager()
+        self.command_handler = CommandManager()
 
-    def register_default_commands(self, commands_dictionary):
-        '''Registers default commands'''
-
-        # Registers each Command in the dictionary with the Command Manager
-        for command_name, command_instance in commands_dictionary.items():
-            self.command_manager.register_command(command_name, command_instance)
+    def load_plugins(self):
+        ''' Dynamically load all plugins in the plugins directory'''
+        plugins_package = 'app.plugins'
+        for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_package.replace('.', '/')]):
+            if is_pkg:  # Ensure it's a package
+                plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+                for item_name in dir(plugin_module):
+                    item = getattr(plugin_module, item_name)
+                    try:
+                        if issubclass(item, (Command)):  # Assuming a BaseCommand class exists
+                            self.command_handler.register_command(plugin_name, item())
+                    except TypeError:
+                        continue  # If item is not a class or unrelated class, just ignore
 
     def start(self):
         '''Starts the App'''
         # Prints Introduction
         introduction()
 
-        # Registers default commands
-        self.register_default_commands(App.commands_dictionary)
+        # Register commands
+        self.load_plugins()
 
+        # REPL: Read, Evaluate, Print, Loop
+        # Tries to Execute the Input Command Name, then Loops
         while True:
-            # REPL: Read, Evaluate, Print, Loop
-            # Tries to Execute the Input Command Name, then Loops
-            self.command_manager.execute_command(input('>>> ').strip())
+            self.command_handler.execute_command(input(">>> ").strip())

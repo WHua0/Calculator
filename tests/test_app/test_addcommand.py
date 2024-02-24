@@ -3,7 +3,7 @@
 '''AddCommand Test'''
 import unittest
 from unittest.mock import patch
-from app.commands.addcommand import AddCommand
+from app.plugins.add import AddCommand
 
 class TestAddCommand(unittest.TestCase):
     '''Tests AddCommand'''
