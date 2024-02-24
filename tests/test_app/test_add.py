@@ -1,6 +1,6 @@
 # pylint: disable = unused-argument
 
-'''AddCommand Test'''
+'''Add Test'''
 import unittest
 from unittest.mock import patch
 from app.plugins.add import AddCommand

@@ -1,6 +1,6 @@
 # pylint: disable = unused-argument
 
-'''MultiplyCommand Test'''
+'''Multiply Test'''
 import unittest
 from unittest.mock import patch
 from app.plugins.multiply import MultiplyCommand

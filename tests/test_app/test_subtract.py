@@ -1,6 +1,6 @@
 # pylint: disable = unused-argument
 
-'''SubtractCommand Test'''
+'''Subtract Test'''
 import unittest
 from unittest.mock import patch
 from app.plugins.subtract import SubtractCommand
