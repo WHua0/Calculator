@@ -7,8 +7,9 @@ from app.commandmanager import Command, CommandManager
 
 class MockCommand(Command):
     '''Class MockCommand'''
+
     def execute(self):
-        pass
+        pass # pragma: no cover
 
 class TestCommandManager(unittest.TestCase):
     '''Class TestCommandManager'''
