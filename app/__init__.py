@@ -17,8 +17,17 @@ class App:
         '''Constructor'''
         self.command_manager = CommandManager()
 
-    def register_default_commands(self):
+    def register_default_commands(self, commands_dictionary):
         '''Registers default commands'''
+
+        # Registers each Command in the dictionary with the Command Handler
+        for command_name, command_instance in commands_dictionary.items():
+            self.command_manager.register_command(command_name, command_instance)
+
+    def start(self):
+        '''Starts the App'''
+        # Prints Introduction
+        introduction()
 
         # Dictionary of Commands
         commands_dictionary = {
@@ -30,17 +39,8 @@ class App:
             'divide': DivideCommand()
         }
 
-        # Registers each Command in the dictionary with the Command Handler
-        for command_name, command_instance in commands_dictionary.items():
-            self.command_manager.register_command(command_name, command_instance)
-
-    def start(self):
-        '''Starts the App'''
-        # Prints Introduction
-        introduction()
-
         # Registers default commands
-        self.register_default_commands()
+        self.register_default_commands(commands_dictionary)
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
