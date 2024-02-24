@@ -3,11 +3,11 @@
 '''Application'''
 from app.introduction import introduction
 from app.commandmanager import CommandHandler
-from app.exitcommand import ExitCommand
-from app.addcommand import AddCommand
-from app.subtractcommand import SubtractCommand
-from app.multiplycommand import MultiplyCommand
-from app.dividecommand import DivideCommand
+from app.commands.exitcommand import ExitCommand
+from app.commands.addcommand import AddCommand
+from app.commands.subtractcommand import SubtractCommand
+from app.commands.multiplycommand import MultiplyCommand
+from app.commands.dividecommand import DivideCommand
 
 class App:
     '''Class App'''

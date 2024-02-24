@@ -3,7 +3,7 @@
 '''Exit Test'''
 import sys
 import pytest
-from app.exitcommand import ExitCommand
+from app.commands.exitcommand import ExitCommand
 
 @pytest.fixture
 def exit_command():
