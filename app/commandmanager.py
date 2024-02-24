@@ -30,3 +30,5 @@ class CommandHandler:
         # If fails to execute => KeyError: Invalid Command
         except KeyError:
             print(f'Invalid Command: {command_name}')
+            print('Type "menu" for details.')
+            print('Type "exit" to exit.')
