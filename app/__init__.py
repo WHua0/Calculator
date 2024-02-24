@@ -7,6 +7,7 @@ from app.exitcommand import ExitCommand
 from app.addcommand import AddCommand
 from app.subtractcommand import SubtractCommand
 from app.multiplycommand import MultiplyCommand
+from app.dividecommand import DivideCommand
 
 class App:
     '''Class App'''
@@ -25,6 +26,7 @@ class App:
         self.command_handler.register_command('add', AddCommand())
         self.command_handler.register_command('subtract', SubtractCommand())
         self.command_handler.register_command('multiply', MultiplyCommand())
+        self.command_handler.register_command('divide', DivideCommand())
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
