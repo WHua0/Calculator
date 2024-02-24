@@ -13,6 +13,16 @@ from app.commands.dividecommand import DivideCommand
 class App:
     '''Class App'''
 
+    # Dictionary of Commands
+    commands_dictionary = {
+        'menu': MenuCommand(),
+        'exit': ExitCommand(),
+        'add': AddCommand(),
+        'subtract': SubtractCommand(),
+        'multiply': MultiplyCommand(),
+        'divide': DivideCommand()
+    }
+
     def __init__(self):
         '''Constructor'''
         self.command_manager = CommandManager()
@@ -29,18 +39,8 @@ class App:
         # Prints Introduction
         introduction()
 
-        # Dictionary of Commands
-        commands_dictionary = {
-            'menu': MenuCommand(),
-            'exit': ExitCommand(),
-            'add': AddCommand(),
-            'subtract': SubtractCommand(),
-            'multiply': MultiplyCommand(),
-            'divide': DivideCommand()
-        }
-
         # Registers default commands
-        self.register_default_commands(commands_dictionary)
+        self.register_default_commands(App.commands_dictionary)
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
