@@ -17,18 +17,29 @@ class App:
         '''Constructor'''
         self.command_handler = CommandHandler()
 
+    def register_default_commands(self):
+        '''Registers default commands'''
+
+        # Dictionary of Commands
+        commands_dictionary = {
+            'menu': MenuCommand(),
+            'exit': ExitCommand(),
+            'add': AddCommand(),
+            'subtract': SubtractCommand(),
+            'multiply': MultiplyCommand(),
+            'divide': DivideCommand()
+        }
+
+        for command_name, command_instance in commands_dictionary.items():
+            self.command_handler.register_command(command_name, command_instance)
+
     def start(self):
         '''Starts the App'''
         # Prints Introduction
         introduction()
 
-        # Valid Commands
-        self.command_handler.register_command('menu', MenuCommand())
-        self.command_handler.register_command('exit', ExitCommand())
-        self.command_handler.register_command('add', AddCommand())
-        self.command_handler.register_command('subtract', SubtractCommand())
-        self.command_handler.register_command('multiply', MultiplyCommand())
-        self.command_handler.register_command('divide', DivideCommand())
+        # Registers default commands
+        self.register_default_commands()
 
         while True:
             # REPL: Read, Evaluate, Print, Loop
