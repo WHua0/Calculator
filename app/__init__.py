@@ -2,8 +2,8 @@
 
 '''Application'''
 from app.introduction import introduction
-from app.commands import CommandHandler
-from app.exit import ExitCommand
+from app.commandmanager import CommandHandler
+from app.exitcommand import ExitCommand
 
 class App:
     '''Class App'''

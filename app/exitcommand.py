@@ -2,7 +2,7 @@
 
 '''Exit Command'''
 import sys
-from app.commands import Command
+from app.commandmanager import Command
 
 class ExitCommand(Command):
     '''Exits Python Interpreter and Terminates Program'''
