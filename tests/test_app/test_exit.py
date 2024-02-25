@@ -1,4 +1,5 @@
 # pylint: disable = redefined-outer-name
+# pylint: disable = unused-variable
 
 '''Exit Test'''
 import sys
@@ -17,7 +18,7 @@ def test_execute(exit_command, monkeypatch):
     def mock_exit(msg):
         nonlocal exit_msg
         exit_msg = msg
-        raise SystemExit  # Raise SystemExit to simulate exit without actually exiting
+        raise SystemExit
 
     monkeypatch.setattr(sys, 'exit', mock_exit)
 
