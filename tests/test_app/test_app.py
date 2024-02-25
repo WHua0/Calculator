@@ -31,7 +31,7 @@ class TestApp(unittest.TestCase):
             except SystemExit as e:
                 self.assertEqual(e.code, 'Exiting Calculator App ...')
             else:
-                self.fail('Expected SystemExit but it did not occur.')
+                self.fail('Expected SystemExit but it did not occur.') # pragma: no cover
 
         self.assertIn('Calculator App Initiated.\n\nPlease type a command.\nType "menu" for details.\nType "exit" to exit.\n\nInvalid Command: fake_command\nType "menu" for details.\nType "exit" to exit.\n', mock_stdout.getvalue())
 
