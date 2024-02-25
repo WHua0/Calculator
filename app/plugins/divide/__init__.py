@@ -16,7 +16,7 @@ class DivideCommand(Command):
         try:
             # Tries to convert a and b into decimal objects
             a_decimal, b_decimal = map(Decimal, [a, b])
-            # If successful,divides a by b, and prints result
+            # If successful, divides a by b, and prints result
             result = Calculator.divide(a_decimal, b_decimal)
             print(f'The result of {a} divide {b} is equal to {result}.')
 
