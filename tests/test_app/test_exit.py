@@ -17,9 +17,11 @@ def test_execute(exit_command, monkeypatch):
     def mock_exit(msg):
         nonlocal exit_msg
         exit_msg = msg
+        raise SystemExit  # Raise SystemExit to simulate exit without actually exiting
 
     monkeypatch.setattr(sys, 'exit', mock_exit)
 
-    exit_command.execute()
+    with pytest.raises(SystemExit) as exc_info:
+        exit_command.execute()
 
-    assert exit_msg == 'Exiting Calculator App ...', 'Exit Function failed!'
+    assert exit_msg == 'Exiting Calculator App ...'
