@@ -1,9 +1,12 @@
+# pylint: disable = line-too-long
+# pylint: disable = unused-import
+
 '''App Test'''
 import unittest
 from unittest.mock import patch
 from io import StringIO
-from app import App
 import sys
+from app import App
 
 class TestApp(unittest.TestCase):
     '''Class TestApp'''
@@ -26,7 +29,7 @@ class TestApp(unittest.TestCase):
             try:
                 app.start()
             except SystemExit as e:
-                self.assertEqual(e.code, 'Exiting Calculator App ...') 
+                self.assertEqual(e.code, 'Exiting Calculator App ...')
             else:
                 self.fail('Expected SystemExit but it did not occur.')
 
