@@ -16,6 +16,7 @@ class TestApp(unittest.TestCase):
         self.assertTrue(len(app.command_manager.commands) > 0)
 
     @patch('sys.stdout', new_callable=StringIO)
+
     def test_start(self, mock_stdout):
         '''Tests that introduction loads'''
 
@@ -25,9 +26,9 @@ class TestApp(unittest.TestCase):
             try:
                 app.start()
             except SystemExit as e:
-                self.assertEqual(e.code, 'Exiting Calculator App ...')  # Assert the exit message
+                self.assertEqual(e.code, 'Exiting Calculator App ...') 
             else:
-                self.fail("Expected SystemExit but it didn't occur")
+                self.fail('Expected SystemExit but it did not occur.')
 
         self.assertIn('Calculator App Initiated.\n\nPlease type a command.\nType "menu" for details.\nType "exit" to exit.\n\nInvalid Command: fake_command\nType "menu" for details.\nType "exit" to exit.\n', mock_stdout.getvalue())
 
