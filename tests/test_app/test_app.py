@@ -12,7 +12,7 @@ class TestApp(unittest.TestCase):
     '''Class TestApp'''
 
     def test_load_plugins(self):
-        '''Tests that at least one plugin loads'''
+        '''Tests load_plugins'''
 
         app = App()
         app.load_plugins()
@@ -21,7 +21,7 @@ class TestApp(unittest.TestCase):
     @patch('sys.stdout', new_callable=StringIO)
 
     def test_start(self, mock_stdout):
-        '''Tests that introduction loads'''
+        '''Tests start'''
 
         app = App()
 
