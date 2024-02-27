@@ -3,6 +3,7 @@ import pkgutil
 import importlib
 from app.introduction import introduction
 from app.commandmanager import Command, CommandManager
+from app.plugins.menu import MenuCommand
 
 class App:
     '''Class App'''
@@ -10,6 +11,7 @@ class App:
     def __init__(self):
         '''Constructor'''
         self.command_manager = CommandManager()
+        self.command_manager.register_command("menu", MenuCommand(self.command_manager))
 
     def load_plugins(self):
         ''' Dynamically load all plugins in the plugins directory'''
