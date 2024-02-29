@@ -2,7 +2,7 @@
 
 '''Multiply Command'''
 from app.commandmanager import Command
-from app.calculateprint import calculate_and_print
+from calculator.calculateprint import calculate_and_print
 
 class MultiplyCommand(Command):
     '''Asks for Two Numbers,  Multiplies, and Prints'''
