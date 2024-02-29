@@ -1,8 +1,8 @@
 # pylint: disable = line-too-long
 
-'''CalculatePrint Test'''
+'''Calculate and Print Test'''
 import pytest
-from calculator.calculateprint import calculate_and_print
+from calculator.calculateandprint import calculate_and_print
 
 @pytest.mark.parametrize('a_string, b_string, operation_string, expected_string', [
     # Tests for Add, Subtract, Multiple, Divide

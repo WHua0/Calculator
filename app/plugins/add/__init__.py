@@ -2,7 +2,7 @@
 
 '''Add Command'''
 from app.commandmanager import Command
-from calculator.calculateprint import calculate_and_print
+from calculator.calculateandprint import calculate_and_print
 
 class AddCommand(Command):
     '''Asks for Two Numbers, Adds, and Prints'''

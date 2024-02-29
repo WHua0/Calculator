@@ -4,7 +4,7 @@
 '''Calculator Script'''
 
 import sys
-from calculator.calculateprint import calculate_and_print
+from calculator.calculateandprint import calculate_and_print
 
 def cli_command():
     '''Entry point for Python Script'''
