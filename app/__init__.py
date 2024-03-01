@@ -30,26 +30,26 @@ class App:
         self.command_manager = CommandManager()
         self.command_manager.register_command("menu", MenuCommand(self.command_manager))
 
-    def configure_logging(self): # Need to add to Test
+    def configure_logging(self):
         '''Configures Logging Settings'''
         logging_conf_path = 'logging.conf'
         if os.path.exists(logging_conf_path):
             # If logging.conf exists, configures logging using logging.conf
-            logging.config.fileConfig(logging_conf_path, disable_existing_loggers = False) # Missing in pytest cov
+            logging.config.fileConfig(logging_conf_path, disable_existing_loggers = False)
         else:
             # If not, configures basic logging settings with a default level of info
             logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s - %(message)s')
         logging.info('Logging configured.')
 
-    def load_environment_variables(self): # Need to add to Test
+    def load_environment_variables(self):
         '''Loads Environment Variables into Settings Dictionary'''
         settings = dict(os.environ.items())
         logging.info('Environment variables loaded.')
         return settings
 
-    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'): # Need to add to Test
+    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
         '''Retrieves Environment Variables from Settings, but returns None if it doesn't exist'''
-        return self.settings.get(env_var, None) # Missing in pytest cov
+        return self.settings.get(env_var, None)
 
     def load_plugins(self):
         ''' Dynamically load all plugins in the plugins directory'''
