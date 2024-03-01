@@ -79,7 +79,6 @@ class App:
 
                     except TypeError:
                         # If not, ignores
-                        logging.error("Command '%s' from plugin '%s' failed to register.", plugin_name, plugins_package)
                         continue
 
     def start(self):

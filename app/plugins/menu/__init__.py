@@ -1,6 +1,7 @@
 # pylint: disable=too-few-public-methods
 
 '''Menu Command'''
+import logging
 from app.commandmanager import Command
 
 class MenuCommand(Command):
@@ -15,3 +16,4 @@ class MenuCommand(Command):
         print('Commands:')
         for plugin_name in self.command_manager.commands.keys():
             print(plugin_name)
+        logging.info('Command Menu printed.')

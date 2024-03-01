@@ -26,8 +26,8 @@ class CommandManager:
     def execute_command(self, command_name: str):
         '''Tries to execute the Command'''
         try:
-            self.commands[command_name].execute()
             logging.info("Command: '%s' executed.", command_name)
+            self.commands[command_name].execute()
 
         # If fails to execute => KeyError: Invalid Command
         except KeyError:
