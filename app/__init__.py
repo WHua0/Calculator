@@ -49,6 +49,7 @@ class App:
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
         '''Retrieves Environment Variables from Settings, but returns None if it doesn't exist'''
+        logging.info('Retrieving environment variables.')
         return self.settings.get(env_var, None)
 
     def load_plugins(self):
@@ -57,12 +58,13 @@ class App:
         # Indicates where the plugins are expected to be found
         plugins_package = 'app.plugins'
 
-        # Iterates through the modules in plugins_pacakge directory
+        # Iterates through the modules in plugins_package directory
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_package.replace('.', '/')]):
 
             # If module is a package, imports the module
             if is_pkg:
                 plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+                logging.info("Command '%s' from plugin '%s' imported.", plugin_name, plugins_package)
 
                 # Iterates over all items defined in that module
                 for item_name in dir(plugin_module):
@@ -73,6 +75,7 @@ class App:
                         if issubclass(item, (Command)):
                             # If yes, instantiates the class and registers it with command manager
                             self.command_manager.register_command(plugin_name, item())
+                            logging.info("Command '%s' from plugin '%s' registered.", plugin_name, plugins_package)
 
                     except TypeError:
                         # If not, ignores
