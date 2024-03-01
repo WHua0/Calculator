@@ -49,7 +49,7 @@ class App:
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
         '''Retrieves Environment Variables from Settings, but returns None if it doesn't exist'''
-        logging.info('Retrieving environment variables.')
+        logging.info('Environment variables retrieved.')
         return self.settings.get(env_var, None)
 
     def load_plugins(self):
@@ -79,10 +79,13 @@ class App:
 
                     except TypeError:
                         # If not, ignores
+                        logging.error("Command '%s' from plugin '%s' failed to register.", plugin_name, plugins_package)
                         continue
 
     def start(self):
         '''Starts the App'''
+
+        logging.info('App initiated.')
 
         # Prints Introduction
         introduction()

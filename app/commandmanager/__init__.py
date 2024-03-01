@@ -1,6 +1,7 @@
 # pylint: disable=too-few-public-methods
 
 '''Command Manager'''
+import logging
 from abc import ABC, abstractmethod
 
 class Command(ABC):
@@ -26,9 +27,11 @@ class CommandManager:
         '''Tries to execute the Command'''
         try:
             self.commands[command_name].execute()
+            logging.info("Command: '%s' executed.", command_name)
 
         # If fails to execute => KeyError: Invalid Command
         except KeyError:
             print(f'Invalid Command: {command_name}')
             print('Type "menu" for details.')
             print('Type "exit" to exit.')
+            logging.error("Invalid command: '%s' attempted.", command_name)

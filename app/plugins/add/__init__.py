@@ -1,6 +1,7 @@
 # pylint: disable=too-few-public-methods
 
 '''Add Command'''
+import logging
 from app.commandmanager import Command
 from calculator.calculateandprint import calculate_and_print
 
@@ -15,3 +16,4 @@ class AddCommand(Command):
 
         # Calculates and Prints
         calculate_and_print(a, b, 'add')
+        logging.info("Values: '%s', '%s' attempted.", a, b)

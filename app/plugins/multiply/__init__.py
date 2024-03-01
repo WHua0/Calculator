@@ -1,6 +1,7 @@
 # pylint: disable = too-few-public-methods
 
 '''Multiply Command'''
+import logging
 from app.commandmanager import Command
 from calculator.calculateandprint import calculate_and_print
 
@@ -15,3 +16,4 @@ class MultiplyCommand(Command):
 
         # Calculates and Prints
         calculate_and_print(a, b, 'multiply')
+        logging.info("Values: '%s', '%s' attempted.", a, b)
