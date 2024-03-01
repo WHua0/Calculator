@@ -1,3 +1,5 @@
+# pylint: disable = line-too-long
+
 '''App'''
 import os
 import pkgutil
@@ -5,6 +7,7 @@ import importlib
 import sys
 import logging
 import logging.config
+from dotenv import load_dotenv
 from app.introduction import introduction
 from app.commandmanager import Command, CommandManager
 from app.plugins.menu import MenuCommand
@@ -14,8 +17,33 @@ class App:
 
     def __init__(self):
         '''Constructor'''
+        os.makedirs('logs', exist_ok=True)
+        self.configure_logging()
+        load_dotenv()
+        self.settings = {}
+        self.settings = self.load_environment_variables()
+        self.settings.setdefault('ENVIRONMENT', 'TESTING')
         self.command_manager = CommandManager()
         self.command_manager.register_command("menu", MenuCommand(self.command_manager))
+
+    def configure_logging(self):
+        '''Configures Logging'''
+        logging_conf_path = 'logging.conf'
+        if os.path.exists(logging_conf_path):
+            logging.config.fileConfig(logging_conf_path, disable_existing_loggers=False)
+        else:
+            logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        logging.info('Logging configured.')
+
+    def load_environment_variables(self):
+        '''Loads Environment Variables'''
+        settings = dict(os.environ.items())
+        logging.info('Environment variables loaded.')
+        return settings
+
+    def get_environment_variable(self, env_var: str = 'ENVIRONMENT'):
+        '''Gets Environment Variables'''
+        return self.settings.get(env_var, None)
 
     def load_plugins(self):
         ''' Dynamically load all plugins in the plugins directory'''
