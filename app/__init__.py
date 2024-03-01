@@ -1,6 +1,10 @@
 '''App'''
+import os
 import pkgutil
 import importlib
+import sys
+import logging
+import logging.config
 from app.introduction import introduction
 from app.commandmanager import Command, CommandManager
 from app.plugins.menu import MenuCommand
