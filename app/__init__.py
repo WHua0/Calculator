@@ -17,32 +17,38 @@ class App:
 
     def __init__(self):
         '''Constructor'''
+        # Creates logs directory if it does not exist
         os.makedirs('logs', exist_ok=True)
+        # Configures Logging
         self.configure_logging()
+        # Loads .env
         load_dotenv()
-        self.settings = {}
+        # Loads .env variables into settings
         self.settings = self.load_environment_variables()
+        # Sets default values Environment, Testing
         self.settings.setdefault('ENVIRONMENT', 'TESTING')
         self.command_manager = CommandManager()
         self.command_manager.register_command("menu", MenuCommand(self.command_manager))
 
     def configure_logging(self): # Need to add to Test
-        '''Configures Logging'''
+        '''Configures Logging Settings'''
         logging_conf_path = 'logging.conf'
         if os.path.exists(logging_conf_path):
+            # If logging.conf exists, configures logging using logging.conf
             logging.config.fileConfig(logging_conf_path, disable_existing_loggers = False) # Missing in pytest cov
         else:
+            # If not, configures basic logging settings with a default level of info
             logging.basicConfig(level = logging.INFO, format = '%(asctime)s - %(levelname)s - %(message)s')
         logging.info('Logging configured.')
 
     def load_environment_variables(self): # Need to add to Test
-        '''Loads Environment Variables'''
+        '''Loads Environment Variables into Settings Dictionary'''
         settings = dict(os.environ.items())
         logging.info('Environment variables loaded.')
         return settings
 
     def get_environment_variable(self, env_var: str = 'ENVIRONMENT'): # Need to add to Test
-        '''Gets Environment Variables'''
+        '''Retrieves Environment Variables from Settings, but returns None if it doesn't exist'''
         return self.settings.get(env_var, None) # Missing in pytest cov
 
     def load_plugins(self):
