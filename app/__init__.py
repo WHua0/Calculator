@@ -87,7 +87,6 @@ class App:
         # Registers Commands
         self.load_plugins()
 
-        # REPL: Read, Evaluate, Print, Loop
-        # Tries to Read, Evaluate, Execute the Input Command Name, then Loops
+        # REPL: Read, Evaluate, Print/Execute the Input Command Name, then Loop
         while True:
             self.command_manager.execute_command(input(">>> ").strip())
