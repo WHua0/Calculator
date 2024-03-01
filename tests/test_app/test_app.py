@@ -3,7 +3,7 @@
 
 '''App Test'''
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from io import StringIO
 import sys
 import logging
@@ -17,10 +17,10 @@ class TestApp(unittest.TestCase):
 
     def test_configure_logging_with_logging_conf(self):
         '''Tests Configure_Logging'''
-        with patch('os.path.exists', return_value=True), \
+        with patch('os.path.exists', return_value = True), \
             patch('logging.config.fileConfig') as mock_file_config:
             self.app_instance.configure_logging()
-            mock_file_config.assert_called_once_with('logging.conf', disable_existing_loggers=False)
+            mock_file_config.assert_called_once_with('logging.conf', disable_existing_loggers = False)
 
     def test_configure_logging_without_logging_conf(self):
         '''Tests Configure_Logging without Logging.Conf'''
