@@ -63,23 +63,31 @@ class App:
 
             # If module is a package, imports the module
             if is_pkg:
-                plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
-                logging.info("Command '%s' from plugin '%s' imported.", plugin_name, plugins_package)
+                try:
+                    plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
+                    self.register_plugins(plugin_name, plugin_module)
+                    logging.info("Command '%s' from plugin '%s' imported.", plugin_name, plugins_package)
 
-                # Iterates over all items defined in that module
-                for item_name in dir(plugin_module):
-                    item = getattr(plugin_module, item_name)
+                except ImportError as e:
+                    logging.error("Command '%s' from plugin '%s' failed to import: '%s'", plugin_name, plugins_package, str(e))
 
-                    try:
-                        # Checks if item is a subclass of Command
-                        if issubclass(item, (Command)):
-                            # If yes, instantiates the class and registers it with command manager
-                            self.command_manager.register_command(plugin_name, item())
-                            logging.info("Command '%s' from plugin '%s' registered.", plugin_name, plugins_package)
+    def register_plugins(self, plugin_name, plugin_module):
+        '''Imports and registers commands from a plugin module.'''
 
-                    except TypeError:
-                        # If not, ignores
-                        continue
+        for item_name in dir(plugin_module):
+            item = getattr(plugin_module, item_name)
+
+            try:
+                # Checks if item is a subclass of Command
+                if issubclass(item, Command):
+                    # If yes, instantiates the class and registers it with command manager
+                    command_instance = item()
+                    self.command_manager.register_command(plugin_name, command_instance)
+                    logging.info("Command '%s' from plugin '%s' registered.", command_instance.__class__.__name__, plugin_name)
+
+            except TypeError:
+                # If not, ignores
+                continue
 
     def start(self):
         '''Starts the App'''
