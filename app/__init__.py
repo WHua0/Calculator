@@ -81,9 +81,6 @@ class App:
                         # If not, ignores
                         continue
 
-            else:
-                logging.error("Command '%s' from plugin '%s' failed to import.", plugin_name, plugins_package)
-
     def start(self):
         '''Starts the App'''
 

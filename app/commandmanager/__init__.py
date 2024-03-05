@@ -36,4 +36,3 @@ class CommandManager:
             print(f'Invalid Command: {command_name}')
             print('Type "menu" for details.')
             print('Type "exit" to exit.')
-
