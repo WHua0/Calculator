@@ -51,6 +51,13 @@ class TestApp(unittest.TestCase):
         app.load_plugins()
         self.assertTrue(len(app.command_manager.commands) > 0)
 
+    def test_load_plugins_importerror(self):
+        '''Tests load_plugins importerror'''
+        with patch('app.importlib.import_module') as mock_import_module:
+            mock_import_module.side_effect = ImportError('Mock ImportError')
+            self.app_instance.load_plugins()
+            mock_import_module.assert_called()
+
     @patch('sys.stdout', new_callable=StringIO)
     def test_start(self, mock_stdout):
         '''Tests start'''
