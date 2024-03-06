@@ -6,23 +6,25 @@ import sys
 import pytest
 from app.plugins.exit import ExitCommand
 
-@pytest.fixture
-def exit_command():
-    '''Define Fixture'''
-    return ExitCommand()
+class TestExitCommand:
+    '''Tests ExitCommand'''
 
-def test_execute(exit_command, monkeypatch):
-    '''Tests Exit Command'''
-    exit_msg = None
+    @pytest.fixture
+    def exit_command(self):
+        '''Defines Fixture'''
+        return ExitCommand()
 
-    def mock_exit(msg):
-        nonlocal exit_msg
-        exit_msg = msg
-        raise SystemExit
+    def test_execute(self, exit_command, monkeypatch):
+        '''Tests Execution'''
+        exit_msg = None
 
-    monkeypatch.setattr(sys, 'exit', mock_exit)
+        def mock_exit(msg):
+            nonlocal exit_msg
+            exit_msg = msg
+            raise SystemExit
 
-    with pytest.raises(SystemExit) as exc_info:
-        exit_command.execute()
+        monkeypatch.setattr(sys, 'exit', mock_exit)
+        with pytest.raises(SystemExit) as exc_info:
+            exit_command.execute()
 
-    assert exit_msg == 'Exiting Calculator App ...'
+        assert exit_msg == 'Exiting Calculator App ...'
