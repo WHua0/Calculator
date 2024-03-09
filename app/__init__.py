@@ -18,7 +18,7 @@ class App:
     def __init__(self):
         '''Constructor'''
         # Creates logs directory if it does not exist
-        os.makedirs('logs', exist_ok=True)
+        os.makedirs('logs', exist_ok = True)
         # Configures Logging
         self.configure_logging()
         # Loads .env
